@@ -1,0 +1,15 @@
+[en]
+    languageName = "English"
+    title        = "Haoxin's Tech Blog"
+    weight       = 1
+
+    [en.params.sidebar]
+        subtitle = "Go backend · AI application · Continuous learning"
+
+[zh]
+    languageName = "简体中文"
+    title        = "浩鑫的技术博客"
+    weight       = 2
+
+    [zh.params.sidebar]
+        subtitle = "Go 后端 · AI 应用 · 持续学习"
