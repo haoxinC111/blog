@@ -11,3 +11,7 @@ resources/_gen/
 # mise local config
 mise.toml
 .vercel
+
+# Draft materials
+temp/
+
