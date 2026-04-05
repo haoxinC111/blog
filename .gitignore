@@ -1,0 +1,13 @@
+# Hugo build output
+public/
+resources/_gen/
+.hugo_build.lock
+
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
+
+# mise local config
+mise.toml
+.vercel
