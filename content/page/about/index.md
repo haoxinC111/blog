@@ -26,7 +26,7 @@ menu:
 
 ## 联系我
 
-- **GitHub**: [chenhaoxin](https://github.com/chenhaoxin)
+- **GitHub**: [haoxinC111](https://github.com/haoxinC111)
 - **邮箱**: 可以在这里替换为你的真实邮箱
 
 ---
