@@ -1,6 +1,6 @@
 baseURL                = "https://chenhaoxin-blog.vercel.app"
 languageCode           = "zh-CN"
-title                  = "浩鑫的技术博客"
+title                  = "Haoxin的技术博客"
 # Theme i18n support
 # See i18n folder for available languages
 defaultContentLanguage = "zh"

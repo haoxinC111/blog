@@ -8,7 +8,7 @@
 
 [zh]
     languageName = "简体中文"
-    title        = "浩鑫的技术博客"
+    title        = "Haoxin的技术博客"
     weight       = 2
 
     [zh.params.sidebar]
