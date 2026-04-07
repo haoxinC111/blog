@@ -2,6 +2,7 @@
 
 - **来源 URL**: https://developers.openai.com/api/docs/guides/evaluation-best-practices/
 - **标题**: Evaluation Best Practices | OpenAI API
+- **整理日期**: 2026-04-07
 
 ## 核心要点
 

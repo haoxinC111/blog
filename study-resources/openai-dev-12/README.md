@@ -1,6 +1,6 @@
-# Prompt Engineering
+# openai-dev-12: Prompt Engineering | OpenAI API
 
-- **Source URL**: https://developers.openai.com/api/docs/guides/prompt-engineering/
+- **来源 URL**: https://developers.openai.com/api/docs/guides/prompt-engineering/
 - **整理日期**: 2026-04-07
 
 ## 核心要点
@@ -15,4 +15,5 @@
 
 ## 文档链接
 
-- [OpenAI API Prompt Engineering Guide](https://developers.openai.com/api/docs/guides/prompt-engineering/)
+- 主文档: https://developers.openai.com/api/docs/guides/prompt-engineering/
+- 忠实双语全文: [openai-dev-12-prompt-engineering-bilingual.md](./openai-dev-12-prompt-engineering-bilingual.md)

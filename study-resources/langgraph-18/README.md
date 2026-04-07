@@ -1,13 +1,11 @@
 # langgraph-18: LangGraph Quickstart
 
-⚠️ 原文获取受限 / Source Restricted
-
 - **来源 URL**: https://docs.langchain.com/oss/python/langgraph/quickstart
 - **标题**: LangGraph Quickstart
 
 ## 核心要点
 
-此页面为 LangGraph 的快速入门指南，通过实际示例带领开发者完成第一个 LangGraph 应用的构建。由于网络或站点限制，无法自动抓取原文，建议手动访问源链接阅读完整内容。
+本快速入门通过 Graph API 和 Functional API 两种方式，演示如何构建一个计算器 Agent。内容包含工具与模型定义、状态定义、模型节点与工具节点、条件边逻辑、Agent 编译与调用，以及完整代码示例。
 
 ## 文档链接
 

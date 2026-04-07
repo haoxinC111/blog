@@ -1,17 +1,17 @@
-# Working with Evals
+# openai-dev-04: Working with Evals | OpenAI API
 
-- **Source URL**: https://developers.openai.com/api/docs/guides/evals/
+- **来源 URL**: https://developers.openai.com/api/docs/guides/evals/
 - **整理日期**: 2026-04-07
 
 ## 核心要点
 
-- Evaluations（evals）测试模型输出以确保符合风格和内容标准。
-- 本指南关注用 Evals API 配置评估。
-- 步骤：1) 描述任务作为评估；2) 用测试输入运行评估；3) 分析结果并迭代改进。
-- 示例场景：将 IT 支持工单分类为 Hardware/Software/Other。
-- 创建 eval 需要 `data_source_config`（测试数据 schema）和 `testing_criteria`（评分器决定输出是否正确）。
-- 上传 JSONL 测试数据后，通过 API 创建 eval run，然后在 Dashboard 中查看结果。
+- Evaluations（evals）用于测试模型输出，以确保符合风格和内容标准，是构建可靠 LLM 应用的关键。
+- 本指南聚焦使用 Evals API 以编程方式配置和运行评估（也可在 Dashboard 中配置）。
+- 三大步骤：1) 描述任务并创建 eval（定义 `data_source_config` 和 `testing_criteria`）；2) 上传 JSONL 测试数据并创建 eval run；3) 分析结果并迭代改进 prompt。
+- `data_source_config` 指定测试数据的 JSON schema；`testing_criteria` 使用 graders（如 `string_check`）判断模型输出是否正确。
+- 可通过 webhook 接收 eval run 状态更新，或在 Dashboard 中通过 `report_url` 可视化查看结果。
 
 ## 文档链接
 
-- [OpenAI API Evals Guide](https://developers.openai.com/api/docs/guides/evals/)
+- 主文档: https://developers.openai.com/api/docs/guides/evals/
+- 双语全文: [openai-dev-04-working-with-evals-bilingual.md](./openai-dev-04-working-with-evals-bilingual.md)

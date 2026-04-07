@@ -13,4 +13,4 @@
 ## 文档链接
 
 - 主文档: https://developers.openai.com/codex/app/
-- 双语全文: [openai-dev-07-codex-app-bilingual.md](./openai-dev-07-codex-app-bilingual.md)
+- 忠实双语全文: [openai-dev-07-codex-app-bilingual.md](./openai-dev-07-codex-app-bilingual.md)

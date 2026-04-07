@@ -1,13 +1,17 @@
 # openai-dev-25: Agent Evals | OpenAI API
 
-⚠️ 原文获取受限 / Source Restricted
-
 - **来源 URL**: https://developers.openai.com/api/docs/guides/agent-evals/
 - **标题**: Agent Evals | OpenAI API
+- **整理日期**: 2026-04-07
 
 ## 核心要点
 
-此页面介绍如何对 Agent 进行系统性评估，包含任务成功率、工具调用准确率等指标的设计方法。由于网络或站点限制，无法自动抓取原文，建议手动访问源链接阅读完整内容。
+此页面介绍 OpenAI 平台提供的评估工具套件，用于确保智能体表现一致且准确。关键资源包括：
+- trace grading：识别工作流级别错误
+- Datasets：简便构建和迭代评估
+- Evals：针对外部模型评估、通过 API 交互、大规模运行
+- Prompt optimizer：利用数据集自动改进提示
+- OpenAI Cookbook：丰富的示例代码和第三方资源
 
 ## 文档链接
 

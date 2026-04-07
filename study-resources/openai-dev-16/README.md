@@ -1,4 +1,4 @@
-# Streaming API Responses
+# Streaming API Responses | OpenAI API
 
 - **Source URL**: https://developers.openai.com/api/docs/guides/streaming-responses/
 - **整理日期**: 2026-04-07
@@ -16,4 +16,4 @@
 
 ## 文档链接
 
-- [OpenAI API Streaming Responses Guide](https://developers.openai.com/api/docs/guides/streaming-responses/)
+- [openai-dev-16-streaming-responses-bilingual.md](./openai-dev-16-streaming-responses-bilingual.md)

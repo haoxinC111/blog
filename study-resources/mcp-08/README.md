@@ -1,13 +1,11 @@
-# mcp-08: MCP Intro
-
-⚠️ 原文获取受限 / Source Restricted
+# mcp-08: What is the Model Context Protocol (MCP)?
 
 - **来源 URL**: https://modelcontextprotocol.io/docs/getting-started/intro
-- **标题**: MCP Intro
+- **标题**: What is the Model Context Protocol (MCP)?
 
 ## 核心要点
 
-此页面为 Model Context Protocol (MCP) 的入门介绍，解释 MCP 的设计初衷、基本概念以及它如何为 AI 应用提供标准化的上下文扩展能力。由于网络或站点限制，无法自动抓取原文，建议手动访问源链接阅读完整内容。
+MCP 是一种将 AI 应用连接到外部系统的开源标准。它让 AI 应用能够访问数据源、工具和工作流，从而执行更复杂的任务。可以把它比作 AI 应用的 USB-C 接口，实现一次构建、随处集成。
 
 ## 文档链接
 

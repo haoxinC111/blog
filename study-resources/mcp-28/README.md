@@ -1,13 +1,11 @@
-# mcp-28: MCP Authorization
-
-⚠️ 原文获取受限 / Source Restricted
+# mcp-28: Understanding Authorization in MCP
 
 - **来源 URL**: https://modelcontextprotocol.io/docs/tutorials/security/authorization
-- **标题**: MCP Authorization
+- **标题**: Understanding Authorization in MCP
 
 ## 核心要点
 
-此页面介绍 MCP 的授权与安全机制，涵盖服务器与客户端之间的身份验证、权限控制以及安全最佳实践。由于网络或站点限制，无法自动抓取原文，建议手动访问源链接阅读完整内容。
+本文档介绍 MCP 中的授权机制，讲解基于 OAuth 2.1 的授权流程，以及如何使用 Keycloak 作为授权服务器为 MCP 服务器添加保护。内容包含多语言（TypeScript、Python、C#）示例、Visual Studio Code 客户端测试，以及安全最佳实践和 RFC 标准参考。
 
 ## 文档链接
 
