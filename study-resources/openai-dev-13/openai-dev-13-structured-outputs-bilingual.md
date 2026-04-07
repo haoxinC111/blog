@@ -75,17 +75,15 @@ response = client.responses.parse(
 event = response.output_parsed
 ```
 
-### Supported models
+### Supported models / 支持的模型
 
-### 支持的模型
 
 Structured Outputs is available in our [latest large language models](/api/docs/models), starting with GPT-4o. Older models like `gpt-4-turbo` and earlier may use [JSON mode](#json-mode) instead.
 
 Structured Outputs 在我们的 [latest large language models](/api/docs/models) 中可用，从 GPT-4o 开始。像 `gpt-4-turbo` 及更早的模型可以使用 [JSON mode](#json-mode) 代替。
 
-## When to use Structured Outputs via function calling vs via text.format
+## When to use Structured Outputs via function calling vs via text.format / 何时通过 function calling 使用 Structured Outputs，何时通过 text.format
 
-## 何时通过 function calling 使用 Structured Outputs，何时通过 text.format
 
 Structured Outputs is available in two forms in the OpenAI API:
 
@@ -125,9 +123,8 @@ The remainder of this guide will focus on non-function calling use cases in the 
 
 本指南的其余部分将重点介绍 Responses API 中非 function calling 的用例。要了解如何将 Structured Outputs 与 function calling 结合使用，请查看 [Function Calling](/api/docs/guides/function-calling#function-calling-with-structured-outputs) 指南。
 
-### Structured Outputs vs JSON mode
+### Structured Outputs vs JSON mode / Structured Outputs 与 JSON mode 对比
 
-### Structured Outputs 与 JSON mode 对比
 
 Structured Outputs is the evolution of [JSON mode](#json-mode). While both ensure valid JSON is produced, only Structured Outputs ensure schema adherence. Both Structured Outputs and JSON mode are supported in the Responses API, Chat Completions API, Assistants API, Fine-tuning API and Batch API.
 
@@ -159,9 +156,8 @@ Chain of thought
 
 思维链
 
-### Chain of thought
+### Chain of thought / 思维链
 
-### 思维链
 
 You can ask the model to output an answer in a structured, step-by-step way, to guide the user through the solution.
 
@@ -222,9 +218,8 @@ response = client.responses.parse(
 math_reasoning = response.output_parsed
 ```
 
-#### Example response
+#### Example response / 示例响应
 
-#### 示例响应
 
 ```
 {
@@ -254,9 +249,8 @@ math_reasoning = response.output_parsed
 }
 ```
 
-## How to use Structured Outputs with text.format
+## How to use Structured Outputs with text.format / 如何通过 text.format 使用 Structured Outputs
 
-## 如何通过 text.format 使用 Structured Outputs
 
 Step 1: Define your schema
 
@@ -270,9 +264,8 @@ While Structured Outputs supports much of JSON Schema, some features are unavail
 
 虽然 Structured Outputs 支持大部分 JSON Schema，但出于性能或技术原因，某些功能不可用。更多详情请参见 [此处](about:/api/docs/guides/structured-outputs#supported-schemas)。
 
-#### Tips for your JSON Schema
+#### Tips for your JSON Schema / JSON Schema 技巧
 
-#### JSON Schema 技巧
 
 To maximize the quality of model generations, we recommend the following:
 
@@ -479,9 +472,8 @@ except Exception as e:
     pass
 ```
 
-### Refusals with Structured Outputs
+### Refusals with Structured Outputs / Structured Outputs 中的拒绝
 
-### Structured Outputs 中的拒绝
 
 When using Structured Outputs with user-generated input, OpenAI models may occasionally refuse to fulfill the request for safety reasons. Since a refusal does not necessarily follow the schema you have supplied in `response_format`, the API response will include a new field called `refusal` to indicate that the model refused to fulfill the request.
 
@@ -615,13 +607,11 @@ The API response from a refusal will look something like this:
 }
 ```
 
-### Tips and best practices
+### Tips and best practices / 技巧与最佳实践
 
-### 技巧与最佳实践
 
-#### Handling user-generated input
+#### Handling user-generated input / 处理用户生成的输入
 
-#### 处理用户生成的输入
 
 If your application is using user-generated input, make sure your prompt includes instructions on how to handle situations where the input cannot result in a valid response.
 
@@ -635,17 +625,15 @@ You could include language in your prompt to specify that you want to return emp
 
 你可以在提示中加入说明，指定如果模型检测到输入与任务不兼容，你希望返回空参数或特定句子。
 
-#### Handling mistakes
+#### Handling mistakes / 处理错误
 
-#### 处理错误
 
 Structured Outputs can still contain mistakes. If you see mistakes, try adjusting your instructions, providing examples in the system instructions, or splitting tasks into simpler subtasks. Refer to the [prompt engineering guide](/api/docs/guides/prompt-engineering) for more guidance on how to tweak your inputs.
 
 Structured Outputs 仍然可能包含错误。如果你发现错误，请尝试调整指令、在系统指令中提供示例，或将任务拆分为更简单的子任务。请参阅 [prompt engineering guide](/api/docs/guides/prompt-engineering) 了解更多关于调整输入的指导。
 
-#### Avoid JSON schema divergence
+#### Avoid JSON schema divergence / 避免 JSON schema 分歧
 
-#### 避免 JSON schema 分歧
 
 To prevent your JSON Schema and corresponding types in your programming language from diverging, we strongly recommend using the native Pydantic/zod sdk support.
 
@@ -746,9 +734,8 @@ Structured Outputs supports a subset of the [JSON Schema](https://json-schema.or
 
 Structured Outputs 支持 [JSON Schema](https://json-schema.org/docs) 语言的一个子集。
 
-#### Supported types
+#### Supported types / 支持的类型
 
-#### 支持的类型
 
 The following types are supported for Structured Outputs:
 
@@ -771,9 +758,8 @@ Structured Outputs 支持以下类型：
 * anyOf
 * anyOf
 
-#### Supported properties
+#### Supported properties / 支持的属性
 
-#### 支持的属性
 
 In addition to specifying the type of a property, you can specify a selection of additional constraints:
 
@@ -899,9 +885,8 @@ Note these constraints are [not yet supported for fine-tuned models](#some-type-
 
 请注意，这些约束 [尚未支持微调模型](#some-type-specific-keywords-are-not-yet-supported)。
 
-#### Root objects must not be `anyOf` and must be an object
+#### Root objects must not be `anyOf` and must be an object / 根对象不能是 `anyOf`，必须是对象
 
-#### 根对象不能是 `anyOf`，必须是对象
 
 Note that the root level object of a schema must be an object, and not use `anyOf`. A pattern that appears in Zod (as one example) is using a discriminated union, which produces an `anyOf` at the top level. So code such as the following won't work:
 
@@ -936,9 +921,8 @@ const finalSchema = z.discriminatedUnion('status', [
 const json = zodResponseFormat(finalSchema, 'final_schema');
 ```
 
-#### All fields must be `required`
+#### All fields must be `required` / 所有字段必须是 `required`
 
-#### 所有字段必须是 `required`
 
 To use Structured Outputs, all fields or function parameters must be specified as `required`.
 
@@ -1042,25 +1026,22 @@ Although all fields must be required (and the model will return a value for each
 }
 ```
 
-#### Objects have limitations on nesting depth and size
+#### Objects have limitations on nesting depth and size / 对象在嵌套深度和大小方面有限制
 
-#### 对象在嵌套深度和大小方面有限制
 
 A schema may have up to 5000 object properties total, with up to 10 levels of nesting.
 
 一个 schema 最多可以有 5000 个对象属性，最多 10 层嵌套。
 
-#### Limitations on total string size
+#### Limitations on total string size / 总字符串大小限制
 
-#### 总字符串大小限制
 
 In a schema, total string length of all property names, definition names, enum values, and const values cannot exceed 120,000 characters.
 
 在 schema 中，所有属性名称、定义名称、枚举值和常量值的总字符串长度不能超过 120,000 个字符。
 
-#### Limitations on enum size
+#### Limitations on enum size / 枚举大小限制
 
-#### 枚举大小限制
 
 A schema may have up to 1000 enum values across all enum properties.
 
@@ -1070,9 +1051,8 @@ For a single enum property with string values, the total string length of all en
 
 对于具有字符串值的单个枚举属性，当枚举值超过 250 个时，所有枚举值的总字符串长度不能超过 15,000 个字符。
 
-#### `additionalProperties: false` must always be set in objects
+#### `additionalProperties: false` must always be set in objects / 对象中必须始终设置 `additionalProperties: false`
 
-#### 对象中必须始终设置 `additionalProperties: false`
 
 `additionalProperties` controls whether it is allowable for an object to contain additional keys / values that were not defined in the JSON Schema.
 
@@ -1131,17 +1111,15 @@ Structured Outputs 仅支持生成指定的键/值，因此我们要求开发者
 }
 ```
 
-#### Key ordering
+#### Key ordering / 键排序
 
-#### 键排序
 
 When using Structured Outputs, outputs will be produced in the same order as the ordering of keys in the schema.
 
 使用 Structured Outputs 时，输出将按照 schema 中键的顺序生成。
 
-#### Some type-specific keywords are not yet supported
+#### Some type-specific keywords are not yet supported / 某些特定类型的关键字尚不支持
 
-#### 某些特定类型的关键字尚不支持
 
 * **Composition:** `allOf`, `not`, `dependentRequired`, `dependentSchemas`, `if`, `then`, `else`
 * **组合：** `allOf`、`not`、`dependentRequired`、`dependentSchemas`、`if`、`then`、`else`
@@ -1163,9 +1141,8 @@ If you turn on Structured Outputs by supplying `strict: true` and call the API w
 
 如果你通过提供 `strict: true` 启用 Structured Outputs，并使用不支持的 JSON Schema 调用 API，你将收到错误。
 
-#### For `anyOf`, the nested schemas must each be a valid JSON Schema per this subset
+#### For `anyOf`, the nested schemas must each be a valid JSON Schema per this subset / 对于 `anyOf`，嵌套的 schema 每个都必须是此子集的有效 JSON Schema
 
-#### 对于 `anyOf`，嵌套的 schema 每个都必须是此子集的有效 JSON Schema
 
 Here's an example supported anyOf schema:
 
@@ -1286,9 +1263,8 @@ Here's an example supported anyOf schema:
 }
 ```
 
-#### Definitions are supported
+#### Definitions are supported / 支持定义
 
-#### 支持定义
 
 You can use definitions to define subschemas which are referenced throughout your schema. The following is a simple example.
 
@@ -1371,9 +1347,8 @@ You can use definitions to define subschemas which are referenced throughout you
 }
 ```
 
-#### Recursive schemas are supported
+#### Recursive schemas are supported / 支持递归 schema
 
-#### 支持递归 schema
 
 Sample recursive schema using `#` to indicate root recursion.
 

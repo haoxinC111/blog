@@ -44,9 +44,8 @@ Project IDs can be found on your [general settings](/settings) page by selecting
 这些 API 请求的用量计入指定组织和项目的用量。组织 ID 可以在你的 [organization settings](/settings/organization/general) 页面上找到。
 项目 ID 可以通过选择特定项目在你的 [general settings](/settings) 页面上找到。
 
-## Debugging requests
+## Debugging requests / 调试请求
 
-## 调试请求
 
 In addition to [error codes](/docs/guides/error-codes) returned from API responses, you can inspect HTTP response headers containing the unique ID of a particular API request or information about rate limiting applied to your requests. Below is an incomplete list of HTTP headers returned with API responses:
 
@@ -80,9 +79,8 @@ In addition to [error codes](/docs/guides/error-codes) returned from API respons
 
 **OpenAI 建议在生产部署中记录 request ID**，以便在需要时与我们的 [support team](https://help.openai.com/en/) 更高效地进行故障排除。我们的 [official SDKs](/docs/libraries) 在顶级响应对象上提供了一个属性，其中包含 `x-request-id` 标头的值。
 
-### Supplying your own request ID with `X-Client-Request-Id`
+### Supplying your own request ID with `X-Client-Request-Id` / 使用 `X-Client-Request-Id` 提供你自己的请求 ID
 
-### 使用 `X-Client-Request-Id` 提供你自己的请求 ID
 
 In addition to the server-generated `x-request-id`, you can supply your own unique identifier for each request via the `X-Client-Request-Id` request header. This header is not added automatically; you must explicitly set it on the request.
 
@@ -109,9 +107,8 @@ curl https://api.openai.com/v1/chat/completions \
   -H "X-Client-Request-Id: 123e4567-e89b-12d3-a456-426614174000"
 ```
 
-## Backwards compatibility
+## Backwards compatibility / 向后兼容性
 
-## 向后兼容性
 
 OpenAI is committed to providing stability to API users by avoiding breaking changes in major API versions whenever reasonably possible. This includes:
 

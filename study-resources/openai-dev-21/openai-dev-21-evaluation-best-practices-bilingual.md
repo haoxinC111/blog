@@ -15,9 +15,8 @@ Evals are structured tests for measuring a model's performance. They help ensure
 
 评估是用于衡量模型性能的结构化测试。它们有助于确保准确性、性能和可靠性，尽管 AI 系统具有非确定性。它们也是提升基于 LLM 的应用程序性能的少数方法之一（通过 [微调](/api/docs/guides/model-optimization)）。
 
-### Types of evals
+### Types of evals / 评估的类型
 
-### 评估的类型
 
 When you see the word "evals," it could refer to a few things:
 
@@ -35,9 +34,8 @@ This guide is about the third type: designing your own evals.
 
 本指南关注的是第三种：设计你自己的评估。
 
-### How to read evals
+### How to read evals / 如何理解评估
 
-### 如何理解评估
 
 You'll often see numerical eval scores between 0 and 1. There's more to evals than just scores. Combine metrics with human judgment to ensure you're answering the right questions.
 
@@ -95,9 +93,8 @@ Let's run through a few examples.
 
 让我们来看几个例子。
 
-### Example: Summarizing transcripts
+### Example: Summarizing transcripts / 示例：转录摘要
 
-### 示例：转录摘要
 
 To test your LLM-based application's ability to summarize transcripts, your eval design might be:
 
@@ -129,9 +126,8 @@ LLMs are better at discriminating between options. Therefore, evaluations should
 
 大语言模型更擅长在不同选项之间进行区分。因此，评估应侧重于成对比较、分类或针对特定标准打分等任务，而不是开放式的生成。将评估方法与 LLM 的比较优势相结合，可以对 LLM 输出或模型比较做出更可靠的评估。
 
-### Example: Q&A over docs
+### Example: Q&A over docs / 示例：文档问答
 
-### 示例：文档问答
 
 To test your LLM-based application's ability to do Q&A over docs, your eval design might be:
 
@@ -181,17 +177,15 @@ Read about each architecture below to identify where nondeterminism enters your 
 
 阅读以下每种架构的描述，以确定非确定性进入系统的位置。这些就是你想要实施评估的地方。
 
-### Single-turn model interactions
+### Single-turn model interactions / 单轮模型交互
 
-### 单轮模型交互
 
 In this kind of architecture, the user provides input to the model, and the model processes these inputs (along with any developer prompts provided) to generate a corresponding output.
 
 在这种架构中，用户向模型提供输入，模型处理这些输入（以及任何提供的开发者提示）以生成相应的输出。
 
-#### Example
+#### Example / 示例
 
-#### 示例
 
 As an example, consider an online retail scenario. Your system prompt instructs the model to **categorize the customer's question** into one of the following:
 
@@ -217,17 +211,15 @@ To ensure a consistent, efficient user experience, the model should **only retur
 | 开发者和用户提供的输入 | **遵循指令**：模型是否准确理解并按照提供的指令行事？**遵循指令**：模型是否将系统提示置于冲突的用户提示之上？ | 模型是否保持专注于分类任务，还是会被用户的问题所左右？ |
 | 模型生成的输出 | **功能正确性**：模型的输出是否准确、相关且足够全面，以实现预期的任务或目标？ | 模型对意图的判断是否与预期意图正确匹配？ |
 
-### Workflow architectures
+### Workflow architectures / 工作流架构
 
-### 工作流架构
 
 As you look to solve more complex problems, you'll likely transition from a single-turn model interaction to a multistep workflow that chains together several model calls. Workflows don't introduce any new elements of nondeterminism, but they involve multiple underlying model interactions, which you can evaluate in isolation.
 
 当你寻求解决更复杂的问题时，你可能会从单轮模型交互过渡到一个将多个模型调用链接在一起的多步骤工作流。工作流不会引入任何新的非确定性元素，但它们涉及多个底层模型交互，你可以单独对这些交互进行评估。
 
-#### Example
+#### Example / 示例
 
-#### 示例
 
 Take the same example as before, where the customer asks about their order status. A workflow architecture triages the customer request and routes it through a step-by-step process:
 
@@ -255,9 +247,8 @@ Each step in this workflow has its own system prompt that the model must follow,
 | 开发者和用户提供的输入 | **遵循指令**：模型是否准确理解并按照提供的指令行事？**遵循指令**：模型是否将系统提示置于冲突的用户提示之上？ | 模型是否保持专注于分类任务，还是会被用户的问题所左右？模型是否按照指示尝试提取订单 ID？最终回复是否包含订单状态、预计到达日期和追踪号码？ |
 | 模型生成的输出 | **功能正确性**：模型的输出是否准确、相关且足够全面，以实现预期的任务或目标？ | 模型对意图的判断是否与预期意图正确匹配？最终回复中的订单状态、预计到达日期和追踪号码是否正确？ |
 
-### Single-agent architectures
+### Single-agent architectures / 单智能体架构
 
-### 单智能体架构
 
 Unlike workflows, agents solve unstructured problems that require flexible decision making. An agent has instructions and a set of tools and dynamically selects which tool to use. This introduces a new opportunity for nondeterminism.
 
@@ -269,7 +260,7 @@ Tools are developer defined chunks of code that the model can execute. This can 
 
 #### Example
 
-#### 示例
+#### Example / 示例
 
 Let's adapt our customer service example to use a single agent. The agent has access to three distinct tools:
 
@@ -299,9 +290,8 @@ When the customer asks about their order status, the agent dynamically decides t
 | 模型生成的输出 | **功能正确性**：模型的输出是否准确、相关且足够全面，以实现预期的任务或目标？ | 模型对意图的判断是否与预期意图正确匹配？ |
 | 模型选择的工具 | **工具选择**：测试智能体是否能够选择正确工具的评估。**数据精确性**：验证智能体是否使用正确参数调用工具的评估。通常这些参数是从对话历史中提取的，因此目标是验证这次提取是否正确。 | 当用户询问他们的订单状态时，模型是否正确建议调用订单查询工具？模型是否正确提取用户提供的订单 ID 以传给查询工具？ |
 
-### Multi-agent architectures
+### Multi-agent architectures / 多智能体架构
 
-### 多智能体架构
 
 As you add tools and tasks to your single-agent architecture, the model may struggle to follow instructions or select the correct tool to call. Multi-agent architectures help by creating several distinct agents who specialize in different areas. This triaging and handoff among multiple agents introduces a new opportunity for nondeterminism.
 
@@ -311,9 +301,8 @@ The decision to use a multi-agent architecture should be driven by your evals. S
 
 是否使用多智能体架构应由你的评估结果来驱动。一开始就用多智能体架构会增加不必要的复杂性，从而减慢你的上线时间。
 
-#### Example
+#### Example / 示例
 
-#### 示例
 
 Splitting the single-agent example into a multi-agent architecture, we'll have four distinct agents:
 
@@ -351,9 +340,8 @@ As you design your own evals, there are several specific evaluator types to choo
 
 在设计你自己的评估时，有几种具体的评估器类型可供选择。另一种思考方式是：你希望评估器扮演什么角色。
 
-### Metric-based evals
+### Metric-based evals / 基于指标的评估
 
-### 基于指标的评估
 
 Quantitative evals provide a numerical score you can use to filter and rank results. They provide useful benchmarks for automated regression testing.
 
@@ -365,9 +353,8 @@ Quantitative evals provide a numerical score you can use to filter and rank resu
 - **示例**：精确匹配、字符串匹配、ROUGE/BLEU 评分、函数调用准确性、可执行评估（执行以评估功能或行为——例如 text2sql）
 - **挑战**：可能不适合特定用例，可能忽略细微差别
 
-### Human evals
+### Human evals / 人类评估
 
-### 人类评估
 
 Human judgment evals provide the highest quality but are slow and expensive.
 
@@ -389,9 +376,8 @@ Human judgment evals provide the highest quality but are slow and expensive.
   + 除了数值分数外，还包括通过/未通过的阈值
   + 汇总多个评审员意见的一种简单方法是采用共识投票
 
-### LLM-as-a-judge and model graders
+### LLM-as-a-judge and model graders / LLM 作为裁判和模型评分器
 
-### LLM 作为裁判和模型评分器
 
 Using models to judge output is cheaper to run and more scalable than human evaluation. Strong LLM judges like GPT-4.1 can match both controlled and crowdsourced human preferences, achieving over 80% agreement (the same level of agreement between humans).
 
@@ -437,9 +423,8 @@ We see these edge cases fall into a few buckets:
 
 我们认为这些边界案例可以分为几类：
 
-### Input variability
+### Input variability / 输入变异性
 
-### 输入变异性
 
 Because users provide input to the model, our system must be flexible to handle the different ways our users may interact, like:
 
@@ -457,9 +442,8 @@ Your evals for instruction following and functional correctness need to accommod
 
 你对遵循指令和功能正确性的评估需要适应用户可能尝试的输入。
 
-### Contextual complexity
+### Contextual complexity / 上下文复杂性
 
-### 上下文复杂性
 
 Many LLM-based applications fail due to poor understanding of the context of the request. This context could be from the user or noise in the past conversation history.
 
@@ -485,9 +469,8 @@ Examples include:
 - 多次工具调用，有时导致错误参数
 - 多次智能体交接，有时导致循环交接
 
-### Personalization and customization
+### Personalization and customization / 个性化与定制化
 
-### 个性化与定制化
 
 While AI improves UX by adapting to user-specific requests, this flexibility introduces many edge cases. Clearly define evals for use cases you want to specifically support and block:
 

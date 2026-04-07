@@ -27,9 +27,8 @@ While authorization for MCP servers is **optional**, it is strongly recommended 
 - 你正在为具有严格访问控制的企业环境构建
 - 你希望按用户实现速率限制或使用量跟踪
 
-## The Authorization Flow: Step by Step
+## The Authorization Flow: Step by Step / 授权流程：分步说明
 
-## 授权流程：分步说明
 
 Let's walk through what happens when a client wants to connect to your protected MCP server:
 
@@ -47,9 +46,8 @@ Let's walk through what happens when a client wants to connect to your protected
 
 6
 
-## Implementation Example
+## Implementation Example / 实现示例
 
-## 实现示例
 
 To get started with a practical implementation, we will use a [Keycloak](https://www.keycloak.org/) authorization server hosted in a Docker container. Keycloak is an open-source authorization server that can be easily deployed locally for testing and experimentation.
 Make sure that you download and install [Docker Desktop](https://www.docker.com/products/docker-desktop/). We will need it to deploy Keycloak on our development machine.
@@ -57,9 +55,8 @@ Make sure that you download and install [Docker Desktop](https://www.docker.com/
 为了开始一个实际的实现，我们将使用托管在 Docker 容器中的 [Keycloak](https://www.keycloak.org/) 授权服务器。Keycloak 是一个开源授权服务器，可以轻松地在本地部署以进行测试和实验。
 请确保你已下载并安装 [Docker Desktop](https://www.docker.com/products/docker-desktop/)。我们需要用它来在开发机器上部署 Keycloak。
 
-### Keycloak Setup
+### Keycloak Setup / Keycloak 设置
 
-### Keycloak 设置
 
 From your terminal application, run the following command to start the Keycloak container:
 
@@ -167,9 +164,8 @@ Decoded, it will look like this:
 }.[Signature]
 ```
 
-### MCP Server Setup
+### MCP Server Setup / MCP 服务器设置
 
-### MCP 服务器设置
 
 We will now set up our MCP server to use the locally-running Keycloak authorization server. Depending on your programming language preference, you can use one of the supported [MCP SDKs](/docs/sdk).
 For our testing purposes, we will create an extremely simple MCP server that exposes two tools - one for addition and another for multiplication. The server will require authorization to access these.
@@ -915,9 +911,8 @@ For more details, see the [C# SDK documentation](https://github.com/modelcontext
 
 有关更多详细信息，请参阅 [C# SDK 文档](https://github.com/modelcontextprotocol/csharp-sdk)。
 
-## Testing the MCP Server
+## Testing the MCP Server / 测试 MCP 服务器
 
-## 测试 MCP 服务器
 
 For testing purposes, we will be using [Visual Studio Code](https://code.visualstudio.com/), but any client that supports MCP and the new authorization specification will fit.
 Press `Cmd` + `Shift` + `P` and select **MCP: Add server…**. Select **HTTP** and enter `http://localhost:3000`. Give the server a unique name to be used inside Visual Studio Code. In `mcp.json` you should now see an entry like this:
@@ -944,9 +939,8 @@ You will be able to invoke individual tools with the help of the `#` sign in the
 
 你可以在聊天视图中借助 `#` 符号调用各个工具。
 
-## Common Pitfalls and How to Avoid Them
+## Common Pitfalls and How to Avoid Them / 常见陷阱及如何避免
 
-## 常见陷阱及如何避免
 
 For comprehensive security guidance, including attack vectors, mitigation strategies, and implementation best practices, make sure to read through [Security Best Practices](/specification/draft/basic/security_best_practices). A few key issues are called out below.
 

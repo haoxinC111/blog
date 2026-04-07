@@ -233,7 +233,7 @@ Now that we have defined how we want our app to behave in an eval, let’s const
 
 既然我们已经在 eval 中定义了希望应用如何表现，让我们构建一个 prompt，使其能够为有代表性的测试数据样本可靠地生成正确输出。
 
-### Uploading test data
+### Uploading test data / 上传测试数据
 
 上传测试数据
 
@@ -283,7 +283,7 @@ When you upload the file, make note of the unique `id` property in the response 
 }
 ```
 
-### Creating an eval run
+### Creating an eval run / 创建 eval run
 
 创建 eval run
 

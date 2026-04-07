@@ -13,9 +13,8 @@ Today, I'm excited to announce our new name: **OpenClaw**.
 
 今天，我很高兴地宣布我们的新名字：**OpenClaw**。
 
-## The Naming Journey
+## The Naming Journey / 命名之旅
 
-## 命名之旅
 
 We've been through some names.
 
@@ -39,9 +38,8 @@ We've been through some names.
 * **Open**：开源、对所有人开放、社区驱动
 * **Claw**：我们的龙虾血统，向我们的起源致敬
 
-## What OpenClaw Is
+## What OpenClaw Is / 什么是 OpenClaw
 
-## 什么是 OpenClaw
 
 OpenClaw is an open agent platform that runs on your machine and works from the chat apps you already use. WhatsApp, Telegram, Discord, Slack, Teams—wherever you are, your AI assistant follows.
 
@@ -55,9 +53,8 @@ Unlike SaaS assistants where your data lives on someone else's servers, OpenClaw
 
 与数据存放在他人服务器上的 SaaS 助手不同，OpenClaw 运行在你选择的地方——笔记本电脑、家庭实验室或 VPS。你的基础设施。你的密钥。你的数据。
 
-## What's New in This Release
+## What's New in This Release / 本次发布的新内容
 
-## 本次发布的新内容
 
 Along with the rebrand, we're shipping:
 
@@ -77,9 +74,8 @@ I'd like to thank all security folks for their hard work in helping us harden th
 
 我要感谢所有安全领域贡献者的辛勤工作，帮助我们加固项目。我们本周发布了[机器可验证的安全模型](https://github.com/vignesh07/clawdbot-formal-models)，并正在继续进行额外的安全改进。请记住，提示词注入仍然是整个行业尚未解决的问题，因此使用强大的模型并学习我们的[安全最佳实践](https://docs.openclaw.ai/gateway/security)非常重要。
 
-## The Road Ahead
+## The Road Ahead / 未来之路
 
-## 未来之路
 
 What's next? Security remains our top priority. We're also focused on gateway reliability and adding polish plus support for more models and providers.
 
@@ -89,9 +85,8 @@ This project has grown far beyond what I could maintain alone. Over the last few
 
 这个项目已经远远超出了我一人能维护的范围。过去几天，我一直在努力增加维护者，并逐步建立流程，以应对疯狂涌入的 PR 和 Issue。我也在想办法为维护者提供合理的报酬——如果可能的话，全职报酬。如果你想帮忙，可以考虑[贡献代码](https://github.com/openclaw/openclaw/blob/main/CONTRIBUTING.md)或[赞助组织](https://github.com/sponsors/openclaw)。
 
-## Thank You
+## Thank You / 致谢
 
-## 致谢
 
 To the Claw Crew—every clawtributor who's shipped code, filed issues, joined our Discord, or just tried the project: thank you. You are what makes OpenClaw special.
 

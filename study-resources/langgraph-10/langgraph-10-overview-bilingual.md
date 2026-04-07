@@ -21,9 +21,8 @@ LangGraph is focused on the underlying capabilities important for agent orchestr
 
 LangGraph 专注于 Agent 编排所必需的核心底层能力：持久化执行、流式传输、人机协同等。
 
-## Install
+## Install / 安装
 
-## 安装
 
 Then, create a simple hello world example:
 
@@ -44,9 +43,8 @@ graph = graph.compile()
 graph.invoke({"messages": [{"role": "user", "content": "hi!"}]})
 ```
 
-## Core benefits
+## Core benefits / 核心优势
 
-## 核心优势
 
 LangGraph provides low-level supporting infrastructure for *any* long-running, stateful workflow or agent. LangGraph does not abstract prompts or architecture, and provides the following central benefits:
 
@@ -72,17 +70,15 @@ LangGraph 为任何长期运行、有状态的工作流或 Agent 提供低级别
 
   [生产级部署](/langsmith/deployment)：利用为处理有状态、长期运行工作流的独特挑战而设计的可扩展基础设施，自信地部署复杂的 Agent 系统。
 
-## LangGraph ecosystem
+## LangGraph ecosystem / LangGraph 生态系统
 
-## LangGraph 生态系统
 
 While LangGraph can be used standalone, it also integrates seamlessly with any LangChain product, giving developers a full suite of tools for building agents. To improve your LLM application development, pair LangGraph with:
 
 虽然 LangGraph 可以独立使用，但它也能与任何 LangChain 产品无缝集成，为开发者提供构建 Agent 的整套工具。要提升你的 LLM 应用开发，可以将 LangGraph 与以下工具搭配使用：
 
-## Acknowledgements
+## Acknowledgements / 致谢
 
-## 致谢
 
 LangGraph is inspired by [Pregel](https://research.google/pubs/pub37252/) and [Apache Beam](https://beam.apache.org/). The public interface draws inspiration from [NetworkX](https://networkx.org/documentation/latest/). LangGraph is built by LangChain Inc, the creators of LangChain, but can be used without LangChain.
 

@@ -11,13 +11,13 @@ Certain agent workflow patterns are more vulnerable to risk. In chat workflows, 
 
 某些智能体工作流模式更容易受到风险影响。在聊天工作流中，两个重要的考虑因素是保护用户输入以及谨慎使用 MCP 工具调用。
 
-### Prompt injections
+### Prompt injections / 提示注入
 
 **Prompt injections** are a common and dangerous type of attack. A prompt injection happens when untrusted text or data enters an AI system, and malicious contents in that text or data attempt to override instructions to the AI. The end goals of prompt injections vary but can include exfiltrating private data via downstream tool calls, taking misaligned actions, or otherwise changing model behavior in an unintended way. For example, a prompt might trick a data lookup agent into sending raw customer records instead of the intended summary. See an example in context in the [Codex internet access docs](https://developers.openai.com/codex/cloud/internet-access/).
 
 **提示注入（Prompt injections）**是一种常见且危险的攻击类型。当不受信任的文本或数据进入 AI 系统时，就会发生提示注入，这些文本或数据中的恶意内容试图覆盖给 AI 的指令。提示注入的最终目标各不相同，但可能包括通过下游工具调用窃取私人数据、采取不一致的操作，或以其他方式以非预期方式改变模型行为。例如，一个提示可能会欺骗数据查询智能体，使其发送原始客户记录而不是预期的摘要。在 [Codex internet access docs](https://developers.openai.com/codex/cloud/internet-access/) 中可以看到上下文中的示例。
 
-### Private data leakage
+### Private data leakage / 私人数据泄露
 
 **Private data leakage**, when an agent accidentally shares private data, is also a risk to guard against. It’s possible for a model to leak private data in a way that’s not intended, without an attacker behind it. For example, a model may send more data to an MCP than the user expected or intended. While guardrails provide better control to limit the information included in context, you don’t have full control over what the model chooses to share with connected MCPs.
 

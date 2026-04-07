@@ -69,7 +69,7 @@ If you used the Codex app, CLI, or IDE Extension before you’ll see past projec
 
 ---
 
-### Multitask across projects
+### Multitask across projects / 跨项目多任务处理
 
 跨项目多任务处理
 
@@ -77,7 +77,7 @@ Run multiple tasks in parallel and switch quickly between them.
 
 并行运行多个任务并在它们之间快速切换。
 
-### Built-in Git tools
+### Built-in Git tools / 内置 Git 工具
 
 内置 Git 工具
 
@@ -85,7 +85,7 @@ Review diffs, comment inline, stage or revert chunks, and commit without leaving
 
 查看差异、行内评论、暂存或回退代码块，无需离开应用即可完成提交。
 
-### Worktrees for parallel tasks
+### Worktrees for parallel tasks / 用于并行任务的 Worktrees
 
 用于并行任务的 Worktrees
 
@@ -93,7 +93,7 @@ Isolate changes of multiple Codex threads using built-in Git worktree support.
 
 利用内置的 Git worktree 支持，隔离多个 Codex 线程的更改。
 
-### Skills support
+### Skills support / Skills 支持
 
 Skills 支持
 
@@ -101,7 +101,7 @@ Give your Codex agent additional capabilities and reuse skills across App, CLI, 
 
 为你的 Codex 代理赋予额外能力，并在 App、CLI 和 IDE 扩展之间复用 skills。
 
-### Automations
+### Automations / 自动化
 
 自动化
 
@@ -109,7 +109,7 @@ Pair skills with automations to automate recurring tasks in the background. Code
 
 将 skills 与自动化配对，在后台自动执行重复性任务。Codex 会将结果添加到收件箱，如果没有需要报告的内容，则会自动归档运行记录。
 
-### Built-in terminal
+### Built-in terminal / 内置终端
 
 内置终端
 
@@ -117,7 +117,7 @@ Open a terminal per thread to test your changes, run dev servers, scripts, and c
 
 为每个线程打开一个终端，以测试更改、运行开发服务器、脚本和自定义命令。
 
-### Local environments
+### Local environments / 本地环境
 
 本地环境
 
@@ -125,7 +125,7 @@ Define worktree setup scripts and common project actions for easy access.
 
 定义 worktree 设置脚本和常用项目操作，以便快速访问。
 
-### Sync with the IDE extension
+### Sync with the IDE extension / 与 IDE 扩展同步
 
 与 IDE 扩展同步
 
@@ -133,7 +133,7 @@ Share Auto Context and active threads across app and IDE sessions.
 
 在应用和 IDE 会话之间共享 Auto Context 和活动线程。
 
-### MCP support
+### MCP support / MCP 支持
 
 MCP 支持
 

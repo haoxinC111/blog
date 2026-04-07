@@ -24,9 +24,8 @@ For conceptual information, see [Graph API overview](/oss/python/langgraph/graph
 * Use the Graph API
 * Use the Functional API
 
-## 1. Define tools and model
+## 1. Define tools and model / 1. 定义工具与模型
 
-## 1. 定义工具与模型
 
 In this example, we'll use the Claude Sonnet 4.5 model and define tools for addition, multiplication, and division.
 
@@ -83,9 +82,8 @@ tools_by_name = {tool.name: tool for tool in tools}
 model_with_tools = model.bind_tools(tools)
 ```
 
-## 2. Define state
+## 2. Define state / 2. 定义状态
 
-## 2. 定义状态
 
 The graph's state is used to store the messages and the number of LLM calls.
 
@@ -102,9 +100,8 @@ class MessagesState(TypedDict):
     llm_calls: int
 ```
 
-## 3. Define model node
+## 3. Define model node / 3. 定义模型节点
 
-## 3. 定义模型节点
 
 The model node is used to call the LLM and decide whether to call a tool or not.
 
@@ -132,9 +129,8 @@ def llm_call(state: dict):
     }
 ```
 
-## 4. Define tool node
+## 4. Define tool node / 4. 定义工具节点
 
-## 4. 定义工具节点
 
 The tool node is used to call the tools and return the results.
 
@@ -155,9 +151,8 @@ def tool_node(state: dict):
     return {"messages": result}
 ```
 
-## 5. Define end logic
+## 5. Define end logic / 5. 定义结束逻辑
 
-## 5. 定义结束逻辑
 
 The conditional edge function is used to route to the tool node or end based upon whether the LLM made a tool call.
 
@@ -182,9 +177,8 @@ def should_continue(state: MessagesState) -> Literal["tool_node", END]:
     return END
 ```
 
-## 6. Build and compile the agent
+## 6. Build and compile the agent / 6. 构建并编译 Agent
 
-## 6. 构建并编译 Agent
 
 The agent is built using the [`StateGraph`](https://reference.langchain.com/python/langgraph/graph/state/StateGraph) class and compiled using the [`compile`](https://reference.langchain.com/python/langgraph/graph/state/StateGraph/compile) method.
 
@@ -384,9 +378,8 @@ for m in messages["messages"]:
     m.pretty_print()
 ```
 
-## 1. Define tools and model
+## 1. Define tools and model / 1. 定义工具与模型
 
-## 1. 定义工具与模型
 
 In this example, we'll use the Claude Sonnet 4.5 model and define tools for addition, multiplication, and division.
 
@@ -452,9 +445,8 @@ from langchain_core.messages import BaseMessage
 from langgraph.func import entrypoint, task
 ```
 
-## 2. Define model node
+## 2. Define model node / 2. 定义模型节点
 
-## 2. 定义模型节点
 
 The model node is used to call the LLM and decide whether to call a tool or not.
 
@@ -474,9 +466,8 @@ def call_llm(messages: list[BaseMessage]):
     )
 ```
 
-## 3. Define tool node
+## 3. Define tool node / 3. 定义工具节点
 
-## 3. 定义工具节点
 
 The tool node is used to call the tools and return the results.
 
@@ -490,9 +481,8 @@ def call_tool(tool_call: ToolCall):
     return tool.invoke(tool_call)
 ```
 
-## 4. Define agent
+## 4. Define agent / 4. 定义 Agent
 
-## 4. 定义 Agent
 
 The agent is built using the [`@entrypoint`](https://reference.langchain.com/python/langgraph/func/entrypoint) function.
 

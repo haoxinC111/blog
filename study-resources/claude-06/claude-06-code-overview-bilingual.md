@@ -9,9 +9,8 @@ Claude Code is an AI-powered coding assistant that helps you build features, fix
 
 Claude Code 是一款 AI 驱动的编程助手，可帮助你构建功能、修复错误并自动执行开发任务。它能理解你的整个代码库，并可以跨多个文件和工具协同工作来完成任务。
 
-## Get started
+## Get started / 开始使用
 
-## 开始使用
 
 Choose your environment to get started. Most surfaces require a [Claude subscription](https://claude.com/pricing?utm_source=claude_code&utm_medium=docs&utm_content=overview_pricing) or [Anthropic Console](https://console.anthropic.com/) account. The Terminal CLI and VS Code also support [third-party providers](/docs/en/third-party-integrations).
 
@@ -141,17 +140,15 @@ Install the [Claude Code plugin](https://plugins.jetbrains.com/plugin/27310-clau
 
 [开始使用 JetBrains →](/docs/en/jetbrains)
 
-## What you can do
+## What you can do / 你能做什么
 
-## 你能做什么
 
 Here are some of the ways you can use Claude Code:
 
 以下是你可以使用 Claude Code 的一些方式：
 
-## Use Claude Code everywhere
+## Use Claude Code everywhere / 随处使用 Claude Code
 
-## 随处使用 Claude Code
 
 Each surface connects to the same underlying Claude Code engine, so your CLAUDE.md files, settings, and MCP servers work across all of them.
 
@@ -185,9 +182,8 @@ Beyond the [Terminal](/docs/en/quickstart), [VS Code](/docs/en/vs-code), [JetBra
 | 调试实时 Web 应用 | [Chrome](/docs/en/chrome) |
 | 为自定义工作流构建专属 Agent | [Agent SDK](https://platform.claude.com/docs/en/agent-sdk/overview) |
 
-## Next steps
+## Next steps / 下一步
 
-## 下一步
 
 Once you've installed Claude Code, these guides help you go deeper.
 

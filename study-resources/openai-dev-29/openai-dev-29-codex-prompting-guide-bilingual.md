@@ -25,9 +25,8 @@ Codex 模型的最新改进
 - 一流的压缩支持：压缩支持数小时的推理而不会触及上下文限制，也支持更长时间的连续用户对话，而无需开启新的聊天会话。
 - Codex 在 PowerShell 和 Windows 环境中的表现也更好。
 
-## Getting Started
+## Getting Started / 入门
 
-## 入门
 
 If you already have a working Codex implementation, this model should work well with relatively minimal updates, but if you're starting with a prompt and set of tools that's optimized for GPT-5-series models, or a third-party model, we recommend making more significant changes. The best reference implementation is our fully open-source codex-cli agent, available on [GitHub](https://github.com/openai/codex). Clone this repo and use Codex (or any coding agent) to ask questions about how things are implemented. From working with customers, we've also learned how to customize agent harnesses beyond this particular implementation.
 
@@ -47,9 +46,8 @@ Key steps to migrate your harness to codex-cli:
    b) 你还应移除所有要求模型传达预先计划、前言或其他状态更新的提示，因为这可能导致模型在执行完成前突然停止。
 2. 更新你的工具，包括我们的 apply_patch 实现和下面的其他最佳实践。这是获得最佳性能的重要杠杆。
 
-## Prompting
+## Prompting / 提示
 
-## 提示
 
 This prompt began as the default [GPT-5.1-Codex-Max prompt](https://github.com/openai/codex/blob/main/codex-rs/core/gpt-5.1-codex-max_prompt.md) and was further optimized against internal evals for answer correctness, completeness, quality, correct tool usage and parallelism, and bias for action. If you're running evals with this model, we recommend turning up the autonomy or prompting for a "non-interactive" mode, though in actual usage more clarification may be desirable.
 
@@ -223,9 +221,8 @@ Additional details
 - 每个发现的文件都会成为自己的 user-role 消息，以 # AGENTS.md instructions for <directory> 开头，其中 <directory> 是提供该文件的文件夹路径（相对于仓库根目录）。
 - 消息按根到叶的顺序注入到对话历史的顶部、用户提示之前：首先是全局指令，然后是仓库根目录，再然后是每个更深的目录。如果使用了 AGENTS.override.md，其目录名仍会出现在标题中（例如 # AGENTS.md instructions for backend/api），因此上下文在记录中显而易见。
 
-## Compaction
+## Compaction / 压缩
 
-## 压缩
 
 Compaction unlocks significantly longer effective context windows, where user conversations can persist for many turns without hitting context window limits or long context performance degradation, and agents can perform very long trajectories that exceed a typical context window for long-running, complex tasks. A weaker version of this was previously possible with ad-hoc scaffolding and conversation summarization, but our first-class implementation, available via the Responses API, is integrated with the model and is highly performant.
 
@@ -251,9 +248,8 @@ For endpoint details see our `/responses/compact` [docs](https://platform.openai
 
 有关端点详情，请参阅我们的 `/responses/compact` [文档](https://platform.openai.com/docs/api-reference/responses/compact)。
 
-## Tools
+## Tools / 工具
 
-## 工具
 
 1. We strongly recommend using our exact `apply_patch` implementation as the model has been trained to excel at this diff format. For terminal commands we recommend our `shell` tool, and for plan/TODO items our `update_plan` tool should be most performant.
 2. If you prefer your agent to use more "terminal-like tools" (like `file_read()` instead of calling `sed` in the terminal), this model can reliably call them instead of terminal (following the instructions below)
@@ -658,9 +654,8 @@ We recommend doing tool call response truncation as follows to be as in-distribu
 - 限制在 10k token。你可以通过计算 `num_bytes/4` 来廉价近似。
 - 如果你达到了截断限制，你应该将预算的一半用于开头，一半用于结尾，并在中间用 `...3 tokens truncated...` 截断。
 
-### Preamble messages
+### Preamble messages / 前言消息
 
-### 前言消息
 
 The Responses API has been updated to include a new `phase` parameter intended to prevent early stopping and other misbehaviors when preamble messages are requested by the prompt. `phase` is currently only supported with `gpt-5.3-codex`. Check out implementation details below. Correctly implementing this parameter is required for `gpt-5.3-codex`; otherwise, significant performance degradation can occur.
 
@@ -674,9 +669,8 @@ To better support preamble messages with `gpt-5.3-codex`, the Responses API incl
 
 为了更好地支持 `gpt-5.3-codex` 的前言消息，Responses API 包含一个 `phase` 字段，旨在防止在长时间运行的任务中出现提前停止和其他异常行为。
 
-#### Values
+#### Values / 取值
 
-#### 取值
 
 `phase` is one of:
 
@@ -686,9 +680,8 @@ To better support preamble messages with `gpt-5.3-codex`, the Responses API incl
 - `"commentary"`
 - `"final_answer"`
 
-#### Where it appears
+#### Where it appears / 出现位置
 
-#### 出现位置
 
 You'll receive `phase` on assistant output items (for example, `output_item.done`). Your integration must persist assistant output items, including their `phase`, and pass those assistant items back in subsequent requests.
 
@@ -698,9 +691,8 @@ You'll receive `phase` on assistant output items (for example, `output_item.done
 
 **重要：** `phase` 仅在助手项上受支持。不要向用户消息添加 `phase`。
 
-#### How it's used downstream
+#### How it's used downstream / 下游如何使用
 
-#### 下游如何使用
 
 When the model marks an output item with:
 
@@ -716,9 +708,8 @@ Correctly preserving `phase` on assistant items is required for `gpt-5.3-codex`.
 
 对于 `gpt-5.3-codex`，必须在助手项上正确保留 `phase`。如果在历史重建过程中丢弃了助手的 `phase` 元数据，可能会导致显著的性能下降。
 
-### Preambles & Personality
+### Preambles & Personality / 前言与个性
 
-### 前言与个性
 
 Preambles are messages sent along with tool calls that provide user updates while working: short, human-readable progress and intent snapshots that keep the user oriented without turning the transcript into a tool-call log. GPT-5.3-Codex preambles have been tuned toward the following characteristics:
 
@@ -738,7 +729,7 @@ Preambles are messages sent along with tool calls that provide user updates whil
 
 #### Personality (Friendly vs Pragmatic)
 
-#### 个性（友好 vs 务实）
+#### Personality (Friendly vs Pragmatic) / 个性（友好 vs 务实）
 
 Personality is the higher-level vibe and collaboration posture that sits above preamble mechanics (cadence, length, and grounding). It affects word choice, how eagerly the model explains tradeoffs, and how much warmth it brings to the interaction.
 
@@ -748,9 +739,8 @@ The Codex app and CLI ship with support for two personalities provided here as e
 
 Codex 应用和 CLI 内置了对两种个性的支持，这里作为你的框架的示例实现提供。
 
-##### Friendly
+##### Friendly / 友好
 
-##### 友好
 
 - More human, partner-y pairing energy.
 - Slightly more acknowledgement, reassurance, and context-setting.
@@ -760,9 +750,8 @@ Codex 应用和 CLI 内置了对两种个性的支持，这里作为你的框架
 - 稍多一些确认、安抚和背景设置。
 - 当用户受益于叙述性引导时更好（入门、模糊任务、高风险的改动）。
 
-###### Example Friendly personality prompt snippet from codex-cli
+###### Example Friendly personality prompt snippet from codex-cli / 来自 codex-cli 的友好个性提示片段示例
 
-###### 来自 codex-cli 的友好个性提示片段示例
 
 This snippet can be used in your system prompt to steer the pair programming personality of the model.
 
@@ -790,9 +779,8 @@ You are a patient and enjoyable collaborator: unflappable when others might get 
 You escalate gently and deliberately when decisions have non-obvious consequences or hidden risk. Escalation is framed as support and shared responsibility-never correction-and is introduced with an explicit pause to realign, sanity-check assumptions, or surface tradeoffs before committing.
 ```
 
-##### Pragmatic
+##### Pragmatic / 务实
 
-##### 务实
 
 - More terse, direct, let's ship delivery.
 - Fewer social flourishes; higher ratio of actionable information per token.
@@ -802,9 +790,8 @@ You escalate gently and deliberately when decisions have non-obvious consequence
 - 更少的社交修饰；每个 token 中可执行信息的比例更高。
 - 当延迟/吞吐量很重要，或者你的用户已经熟悉工作流，只想要进度和结果时更好。
 
-### Troubleshooting & Metaprompting
+### Troubleshooting & Metaprompting / 故障排除与元提示
 
-### 故障排除与元提示
 
 Common failure modes we've been explicitly tracking:
 
@@ -818,9 +805,8 @@ Common failure modes we've been explicitly tracking:
 - 日志化/不自然的状态更新，而不是结对程序员协作。
 - 尴尬的前言措辞和重复的口头禅（"Good catch"、"Aha"、"Got it–" 等）。
 
-#### Metaprompting for targeted fixes
+#### Metaprompting for targeted fixes / 针对具体修复的元提示
 
-#### 针对具体修复的元提示
 
 Failure modes like the ones above can typically be addressed through metaprompting. It's possible to ask the model at the end of a turn that didn't perform up to expectations how to improve its own instructions. The following prompt was used to produce some of the solutions to overthinking problems above and can be modified to meet your particular needs.
 
@@ -837,9 +823,8 @@ When metaprompting inside a specific context, it is important to generate respon
 
 在特定上下文中进行元提示时，如果可能，重要的是生成几次回复并注意它们之间共有的元素。模型提出的一些改进或改动可能过于针对特定情况，但你通常可以简化它们以得出普遍改进。我们建议创建一个评估来衡量特定提示更改对你的特定用例是更好还是更差。
 
-#### Some examples
+#### Some examples / 一些示例
 
-#### 一些示例
 
 - For overthinking / slow starts: ask it to propose instruction changes that reduce time-to-first-tool-call or first concrete plan.
 - For overly loggy preambles: ask it to rewrite your user updates instructions to satisfy your particular preference constraints.

@@ -3,7 +3,7 @@
 > **Source / 原文来源**: https://developers.openai.com/tracks/building-agents/  
 > **Compiled for study on / 整理日期**: 2026-04-07
 
-## Introduction
+## Introduction / 引言
 
 You’ve probably heard of agents, but what does this term actually mean?
 
@@ -153,7 +153,7 @@ Rule of thumb: If the capability already exists as a built‑in tool, start ther
 
 经验法则：如果某项能力已经以内置工具的形式存在，就从那里开始。当你需要自定义逻辑时，再转向使用你自己的函数进行函数调用。
 
-## Tools
+## Tools / 工具
 
 Explore how you can give your agents access to tools to enable actions like retrieving data, executing tasks, and connecting to external systems.
 
@@ -312,7 +312,7 @@ This is a powerful tool for agents that need to generate images within a convers
 
 对于需要在对话中生成图像的智能体来说，这是一个强大的工具，例如创建对话的视觉摘要、编辑用户提供的图像，或在大量上下文的基础上生成和迭代图像。
 
-## Orchestration
+## Orchestration / 编排
 
 **Orchestration** is the concept of handling multiple steps, tool use, handoffs between different agents, guardrails, and context. Put simply, it’s how you manage the conversation flow.
 

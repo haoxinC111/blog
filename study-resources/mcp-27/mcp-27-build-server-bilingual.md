@@ -9,9 +9,8 @@ Let's get started with building our weather server! [You can find the complete c
 
 让我们开始构建天气服务器吧！[你可以在这里找到我们将要构建的完整代码。](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-python)
 
-### Prerequisite knowledge
+### Prerequisite knowledge / 前置知识
 
-### 前置知识
 
 This quickstart assumes you have familiarity with:
 
@@ -23,9 +22,8 @@ This quickstart assumes you have familiarity with:
 - Python
 - 像 Claude 这样的大语言模型
 
-### Logging in MCP Servers
+### Logging in MCP Servers / MCP 服务器中的日志记录
 
-### MCP 服务器中的日志记录
 
 When implementing MCP servers, be careful about how you handle logging:
 
@@ -39,17 +37,15 @@ When implementing MCP servers, be careful about how you handle logging:
 
 **对于基于 HTTP 的服务器：** 标准输出日志不会影响 HTTP 响应，因此没有问题。
 
-### Best Practices
+### Best Practices / 最佳实践
 
-### 最佳实践
 
 * Use a logging library that writes to stderr or files.
 
 - 使用写入 stderr 或文件的日志库。
 
-### Quick Examples
+### Quick Examples / 快速示例
 
-### 快速示例
 
 ```python
 import sys
@@ -65,9 +61,8 @@ print("Processing request", file=sys.stderr)
 logging.info("Processing request")
 ```
 
-### System requirements
+### System requirements / 系统要求
 
-### 系统要求
 
 * Python 3.10 or higher installed.
 * You must use the Python MCP SDK 1.2.0 or higher.
@@ -75,9 +70,8 @@ logging.info("Processing request")
 - 已安装 Python 3.10 或更高版本。
 - 必须使用 Python MCP SDK 1.2.0 或更高版本。
 
-### Set up your environment
+### Set up your environment / 设置环境
 
-### 设置环境
 
 First, let's install `uv` and set up our Python project and environment:
 
@@ -97,11 +91,10 @@ Now let's dive into building your server.
 
 ## Building your server
 
-## 构建服务器
+## Building your server / 构建服务器
 
-### Importing packages and setting up the instance
+### Importing packages and setting up the instance / 导入包并设置实例
 
-### 导入包并设置实例
 
 Add these to the top of your `weather.py`:
 
@@ -125,9 +118,8 @@ The FastMCP class uses Python type hints and docstrings to automatically generat
 
 FastMCP 类利用 Python 的类型提示和文档字符串自动生成工具定义，从而让创建和维护 MCP 工具变得非常简单。
 
-### Helper functions
+### Helper functions / 辅助函数
 
-### 辅助函数
 
 Next, let's add our helper functions for querying and formatting the data from the National Weather Service API:
 
@@ -158,9 +150,8 @@ Instructions: {props.get("instruction", "No specific instructions provided")}
 """
 ```
 
-### Implementing tool execution
+### Implementing tool execution / 实现工具执行
 
-### 实现工具执行
 
 The tool execution handler is responsible for actually executing the logic of each tool. Let's add it:
 
@@ -224,9 +215,8 @@ Forecast: {period["detailedForecast"]}
     return "\n---\n".join(forecasts)
 ```
 
-### Running the server
+### Running the server / 运行服务器
 
-### 运行服务器
 
 Finally, let's initialize and run the server:
 
@@ -250,9 +240,8 @@ Let's now test your server from an existing MCP host, Claude for Desktop.
 
 现在让我们在现有的 MCP 宿主——Claude for Desktop 中测试你的服务器。
 
-## Testing your server with Claude for Desktop
+## Testing your server with Claude for Desktop / 使用 Claude for Desktop 测试服务器
 
-## 使用 Claude for Desktop 测试服务器
 
 First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it's updated to the latest version.**
 
@@ -292,9 +281,8 @@ Let's get started with building our weather server! [You can find the complete c
 
 让我们开始构建天气服务器吧！[你可以在这里找到我们将要构建的完整代码。](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-typescript)
 
-### Prerequisite knowledge
+### Prerequisite knowledge / 前置知识
 
-### 前置知识
 
 This quickstart assumes you have familiarity with:
 
@@ -308,7 +296,7 @@ This quickstart assumes you have familiarity with:
 
 ### Logging in MCP Servers
 
-### MCP 服务器中的日志记录
+### Logging in MCP Servers / MCP 服务器中的日志记录
 
 When implementing MCP servers, be careful about how you handle logging:
 
@@ -322,17 +310,15 @@ When implementing MCP servers, be careful about how you handle logging:
 
 **对于基于 HTTP 的服务器：** 标准输出日志不会影响 HTTP 响应，因此没有问题。
 
-### Best Practices
+### Best Practices / 最佳实践
 
-### 最佳实践
 
 * Use `console.error()` which writes to stderr, or use a logging library that writes to stderr or files.
 
 - 使用 `console.error()`（写入 stderr），或使用写入 stderr 或文件的日志库。
 
-### Quick Examples
+### Quick Examples / 快速示例
 
-### 快速示例
 
 ```javascript
 // Bad (STDIO)
@@ -342,17 +328,15 @@ console.log("Server started");
 console.error("Server started"); // stderr is safe
 ```
 
-### System requirements
+### System requirements / 系统要求
 
-### 系统要求
 
 For TypeScript, make sure you have the latest version of Node installed.
 
 对于 TypeScript，请确保你已安装最新版本的 Node。
 
-### Set up your environment
+### Set up your environment / 设置环境
 
-### 设置环境
 
 First, let's install Node.js and npm if you haven't already. You can download them from [nodejs.org](https://nodejs.org/).
 Verify your Node.js installation:
@@ -420,13 +404,11 @@ Now let's dive into building your server.
 
 现在让我们开始构建你的服务器。
 
-## Building your server
+## Building your server / 构建服务器
 
-## 构建服务器
 
-### Importing packages and setting up the instance
+### Importing packages and setting up the instance / 导入包并设置实例
 
-### 导入包并设置实例
 
 Add these to the top of your `src/index.ts`:
 
@@ -447,9 +429,8 @@ const server = new McpServer({
 });
 ```
 
-### Helper functions
+### Helper functions / 辅助函数
 
-### 辅助函数
 
 Next, let's add our helper functions for querying and formatting the data from the National Weather Service API:
 
@@ -526,7 +507,7 @@ interface ForecastResponse {
 
 ### Implementing tool execution
 
-### 实现工具执行
+### Implementing tool execution / 实现工具执行
 
 The tool execution handler is responsible for actually executing the logic of each tool. Let's add it:
 
@@ -683,9 +664,8 @@ server.registerTool(
 );
 ```
 
-### Running the server
+### Running the server / 运行服务器
 
-### 运行服务器
 
 Finally, implement the main function to run the server:
 
@@ -712,9 +692,8 @@ Let's now test your server from an existing MCP host, Claude for Desktop.
 
 现在让我们在现有的 MCP 宿主——Claude for Desktop 中测试你的服务器。
 
-## Testing your server with Claude for Desktop
+## Testing your server with Claude for Desktop / 使用 Claude for Desktop 测试服务器
 
-## 使用 Claude for Desktop 测试服务器
 
 First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it's updated to the latest version.**
 
@@ -756,9 +735,8 @@ For manual MCP Server implementation, refer to the [MCP Server Java SDK document
 让我们开始构建天气服务器吧！[你可以在这里找到我们将要构建的完整代码。](https://github.com/spring-projects/spring-ai-examples/tree/main/model-context-protocol/weather/starter-stdio-server)更多信息请参阅 [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html) 参考文档。
 如需手动实现 MCP 服务器，请参阅 [MCP Server Java SDK 文档](https://java.sdk.modelcontextprotocol.io/)。
 
-### Prerequisite knowledge
+### Prerequisite knowledge / 前置知识
 
-### 前置知识
 
 This quickstart assumes you have familiarity with:
 
@@ -772,7 +750,7 @@ This quickstart assumes you have familiarity with:
 
 ### Logging in MCP Servers
 
-### MCP 服务器中的日志记录
+### Logging in MCP Servers / MCP 服务器中的日志记录
 
 When implementing MCP servers, be careful about how you handle logging:
 
@@ -786,9 +764,8 @@ When implementing MCP servers, be careful about how you handle logging:
 
 **对于基于 HTTP 的服务器：** 标准输出日志不会影响 HTTP 响应，因此没有问题。
 
-### Best Practices
+### Best Practices / 最佳实践
 
-### 最佳实践
 
 * Use a logging library that writes to stderr or files.
 * Ensure any configured logging library will not write to stdout.
@@ -796,9 +773,8 @@ When implementing MCP servers, be careful about how you handle logging:
 - 使用写入 stderr 或文件的日志库。
 - 确保任何已配置的日志库不会写入 stdout。
 
-### System requirements
+### System requirements / 系统要求
 
-### 系统要求
 
 * Java 17 or higher installed.
 * [Spring Boot 3.3.x](https://docs.spring.io/spring-boot/installing.html) or higher
@@ -806,9 +782,8 @@ When implementing MCP servers, be careful about how you handle logging:
 - 已安装 Java 17 或更高版本。
 - [Spring Boot 3.3.x](https://docs.spring.io/spring-boot/installing.html) 或更高版本。
 
-### Set up your environment
+### Set up your environment / 设置环境
 
-### 设置环境
 
 Use the [Spring Initializer](https://start.spring.io/) to bootstrap the project.You will need to add the following dependencies:
 
@@ -822,9 +797,8 @@ The [Server Configuration Properties](https://docs.spring.io/spring-ai/reference
 
 [服务器配置属性](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html#_configuration_properties)文档记录了所有可用属性。现在让我们开始构建你的服务器。
 
-## Building your server
+## Building your server / 构建服务器
 
-## 构建服务器
 
 ### Weather Service
 
@@ -881,9 +855,8 @@ The Spring AI `@Tool` annotation makes it easy to create and maintain MCP tools.
 `@Service` 注解会自动将服务注册到你的应用上下文中。
 Spring AI 的 `@Tool` 注解让创建和维护 MCP 工具变得非常简单。自动配置会自动将这些工具注册到 MCP 服务器。
 
-### Create your Boot Application
+### Create your Boot Application / 创建你的 Boot 应用
 
-### 创建你的 Boot 应用
 
 ```java
 @SpringBootApplication
@@ -904,9 +877,8 @@ Uses the `MethodToolCallbackProvider` utils to convert the `@Tools` into actiona
 
 使用 `MethodToolCallbackProvider` 工具将 `@Tools` 转换为 MCP 服务器使用的可操作回调。
 
-### Running the server
+### Running the server / 运行服务器
 
-### 运行服务器
 
 Finally, let's build the server:
 
@@ -920,9 +892,8 @@ This will generate an `mcp-weather-stdio-server-0.0.1-SNAPSHOT.jar` file within 
 
 这会在 `target` 文件夹中生成一个 `mcp-weather-stdio-server-0.0.1-SNAPSHOT.jar` 文件。现在让我们在现有的 MCP 宿主——Claude for Desktop 中测试你的服务器。
 
-## Testing your server with Claude for Desktop
+## Testing your server with Claude for Desktop / 使用 Claude for Desktop 测试服务器
 
-## 使用 Claude for Desktop 测试服务器
 
 First, make sure you have Claude for Desktop installed.
 [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it's updated to the latest version.**We'll need to configure Claude for Desktop for whichever MCP servers you want to use.
@@ -954,11 +925,10 @@ Save the file, and restart **Claude for Desktop**.
 
 ## Testing your server with Java client
 
-## 使用 Java 客户端测试服务器
+## Testing your server with Java client / 使用 Java 客户端测试服务器
 
-### Create an MCP Client manually
+### Create an MCP Client manually / 手动创建 MCP 客户端
 
-### 手动创建 MCP 客户端
 
 Use the `McpClient` to connect to the server:
 
@@ -987,9 +957,8 @@ CallToolResult alert = mcpClient.callTool(
 mcpClient.closeGracefully();
 ```
 
-### Use MCP Client Boot Starter
+### Use MCP Client Boot Starter / 使用 MCP Client Boot Starter
 
-### 使用 MCP Client Boot Starter
 
 Create a new boot starter application using the `spring-ai-starter-mcp-client` dependency:
 
@@ -1016,9 +985,8 @@ When you start your client application, the auto-configuration will automaticall
 
 启动客户端应用时，自动配置会根据 claude_desktop_config.json 自动创建 MCP 客户端。更多信息请参阅 [MCP Client Boot Starters](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-client-docs.html) 参考文档。
 
-## More Java MCP Server examples
+## More Java MCP Server examples / 更多 Java MCP 服务器示例
 
-## 更多 Java MCP 服务器示例
 
 The [starter-webflux-server](https://github.com/spring-projects/spring-ai-examples/tree/main/model-context-protocol/weather/starter-webflux-server) demonstrates how to create an MCP server using SSE transport.
 It showcases how to define and register MCP Tools, Resources, and Prompts, using the Spring Boot's auto-configuration capabilities.
@@ -1030,9 +998,8 @@ Let's get started with building our weather server! [You can find the complete c
 
 让我们开始构建天气服务器吧！[你可以在这里找到我们将要构建的完整代码。](https://github.com/modelcontextprotocol/kotlin-sdk/tree/main/samples/weather-stdio-server)
 
-### Prerequisite knowledge
+### Prerequisite knowledge / 前置知识
 
-### 前置知识
 
 This quickstart assumes you have familiarity with:
 
@@ -1046,7 +1013,7 @@ This quickstart assumes you have familiarity with:
 
 ### Logging in MCP Servers
 
-### MCP 服务器中的日志记录
+### Logging in MCP Servers / MCP 服务器中的日志记录
 
 When implementing MCP servers, be careful about how you handle logging:
 
@@ -1060,25 +1027,22 @@ When implementing MCP servers, be careful about how you handle logging:
 
 **对于基于 HTTP 的服务器：** 标准输出日志不会影响 HTTP 响应，因此没有问题。
 
-### Best Practices
+### Best Practices / 最佳实践
 
-### 最佳实践
 
 * Use a logging library that writes to stderr or files.
 
 - 使用写入 stderr 或文件的日志库。
 
-### System requirements
+### System requirements / 系统要求
 
-### 系统要求
 
 * JDK 11 or higher installed.
 
 - 已安装 JDK 11 或更高版本。
 
-### Set up your environment
+### Set up your environment / 设置环境
 
-### 设置环境
 
 First, let's install `java` and `gradle` if you haven't already.
 You can download `java` from [official Oracle JDK website](https://www.oracle.com/java/technologies/downloads/).
@@ -1139,13 +1103,11 @@ Now let's dive into building your server.
 
 现在让我们开始构建你的服务器。
 
-## Building your server
+## Building your server / 构建服务器
 
-## 构建服务器
 
-### Setting up the instance
+### Setting up the instance / 设置实例
 
-### 设置实例
 
 Add a server initialization function:
 
@@ -1181,9 +1143,8 @@ fun runMcpServer() {
 }
 ```
 
-### Weather API helper functions
+### Weather API helper functions / 天气 API 辅助函数
 
-### 天气 API 辅助函数
 
 Next, let's add functions and data classes for querying and converting responses from the National Weather Service API:
 
@@ -1271,9 +1232,8 @@ data class AlertProperties(
 )
 ```
 
-### Implementing tool execution
+### Implementing tool execution / 实现工具执行
 
-### 实现工具执行
 
 The tool execution handler is responsible for actually executing the logic of each tool. Let's add it:
 
@@ -1334,9 +1294,8 @@ server.addTool(
 }
 ```
 
-### Running the server
+### Running the server / 运行服务器
 
-### 运行服务器
 
 Finally, implement the main function to run the server:
 
@@ -1367,9 +1326,8 @@ Let's now test your server from an existing MCP host, Claude for Desktop.
 
 现在让我们在现有的 MCP 宿主——Claude for Desktop 中测试你的服务器。
 
-## Testing your server with Claude for Desktop
+## Testing your server with Claude for Desktop / 使用 Claude for Desktop 测试服务器
 
-## 使用 Claude for Desktop 测试服务器
 
 First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it's updated to the latest version.**We'll need to configure Claude for Desktop for whichever MCP servers you want to use.
 To do this, open your Claude for Desktop App configuration at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor.
@@ -1402,9 +1360,8 @@ Let's get started with building our weather server! [You can find the complete c
 
 让我们开始构建天气服务器吧！[你可以在这里找到我们将要构建的完整代码。](https://github.com/modelcontextprotocol/csharp-sdk/tree/main/samples/QuickstartWeatherServer)
 
-### Prerequisite knowledge
+### Prerequisite knowledge / 前置知识
 
-### 前置知识
 
 This quickstart assumes you have familiarity with:
 
@@ -1418,9 +1375,8 @@ This quickstart assumes you have familiarity with:
 - 像 Claude 这样的大语言模型
 - .NET 8 或更高版本
 
-### Logging in MCP Servers
+### Logging in MCP Servers / MCP 服务器中的日志记录
 
-### MCP 服务器中的日志记录
 
 When implementing MCP servers, be careful about how you handle logging:
 
@@ -1436,23 +1392,21 @@ When implementing MCP servers, be careful about how you handle logging:
 
 ### Best Practices
 
-### 最佳实践
+### Use a logging library that writes to stderr or files. / 最佳实践
 
 * Use a logging library that writes to stderr or files.
 
 - 使用写入 stderr 或文件的日志库。
 
-### System requirements
+### System requirements / 系统要求
 
-### 系统要求
 
 * [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) or higher installed.
 
 - 已安装 [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) 或更高版本。
 
-### Set up your environment
+### Set up your environment / 设置环境
 
-### 设置环境
 
 First, let's install `dotnet` if you haven't already. You can download `dotnet` from [official Microsoft .NET website](https://dotnet.microsoft.com/download/). Verify your `dotnet` installation:
 
@@ -1487,9 +1441,8 @@ Now let's dive into building your server.
 
 现在让我们开始构建你的服务器。
 
-## Building your server
+## Building your server / 构建服务器
 
-## 构建服务器
 
 Open the `Program.cs` file in your project and replace its contents with the following code:
 
@@ -1523,9 +1476,8 @@ This code sets up a basic console application that uses the Model Context Protoc
 
 这段代码设置了一个基本的控制台应用，使用 Model Context Protocol SDK 创建一个基于标准 I/O 传输的 MCP 服务器。
 
-### Weather API helper functions
+### Weather API helper functions / 天气 API 辅助函数
 
-### 天气 API 辅助函数
 
 Create an extension class for `HttpClient` which helps simplify JSON request handling:
 
@@ -1611,9 +1563,8 @@ public static class WeatherTools
 }
 ```
 
-### Running the server
+### Running the server / 运行服务器
 
-### 运行服务器
 
 Finally, run the server using the following command:
 
@@ -1627,9 +1578,8 @@ This will start the server and listen for incoming requests on standard input/ou
 
 这将启动服务器并通过标准输入/输出监听传入的请求。
 
-## Testing your server with Claude for Desktop
+## Testing your server with Claude for Desktop / 使用 Claude for Desktop 测试服务器
 
-## 使用 Claude for Desktop 测试服务器
 
 First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it's updated to the latest version.**
 We'll need to configure Claude for Desktop for whichever MCP servers you want to use. To do this, open your Claude for Desktop App configuration at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor. Make sure to create the file if it doesn't exist.
@@ -1662,9 +1612,8 @@ Let's get started with building our weather server! [You can find the complete c
 
 让我们开始构建天气服务器吧！[你可以在这里找到我们将要构建的完整代码。](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-ruby)
 
-### Prerequisite knowledge
+### Prerequisite knowledge / 前置知识
 
-### 前置知识
 
 This quickstart assumes you have familiarity with:
 
@@ -1676,9 +1625,8 @@ This quickstart assumes you have familiarity with:
 - Ruby
 - 像 Claude 这样的大语言模型
 
-### Logging in MCP Servers
+### Logging in MCP Servers / MCP 服务器中的日志记录
 
-### MCP 服务器中的日志记录
 
 When implementing MCP servers, be careful about how you handle logging:
 
@@ -1692,17 +1640,15 @@ When implementing MCP servers, be careful about how you handle logging:
 
 **对于基于 HTTP 的服务器：** 标准输出日志不会影响 HTTP 响应，因此没有问题。
 
-### Best Practices
+### Best Practices / 最佳实践
 
-### 最佳实践
 
 * Use a logging library that writes to stderr or files.
 
 - 使用写入 stderr 或文件的日志库。
 
-### Quick Examples
+### Quick Examples / 快速示例
 
-### 快速示例
 
 ```ruby
 # Bad (STDIO)
@@ -1714,17 +1660,15 @@ logger = Logger.new($stderr)
 logger.info("Processing request")
 ```
 
-### System requirements
+### System requirements / 系统要求
 
-### 系统要求
 
 * Ruby 2.7 or higher installed.
 
 - 已安装 Ruby 2.7 或更高版本。
 
-### Set up your environment
+### Set up your environment / 设置环境
 
-### 设置环境
 
 First, let's make sure you have Ruby installed. You can check by running:
 
@@ -1744,11 +1688,10 @@ Now let's dive into building your server.
 
 ## Building your server
 
-## 构建服务器
+## Building your server / 构建服务器
 
-### Importing packages and setting up constants
+### Importing packages and setting up constants / 导入包并设置常量
 
-### 导入包并设置常量
 
 Open `weather.rb` and add these requires and constants at the top:
 
@@ -1768,9 +1711,8 @@ The `mcp` gem provides the Model Context Protocol SDK for Ruby, with classes for
 
 `mcp` gem 提供了 Ruby 的 Model Context Protocol SDK，包含服务器实现和 stdio 传输的类。
 
-### Helper methods
+### Helper methods / 辅助方法
 
-### 辅助方法
 
 Next, let's add helper methods for querying and formatting data from the National Weather Service API:
 
@@ -1807,9 +1749,8 @@ module HelperMethods
 end
 ```
 
-### Implementing tool execution
+### Implementing tool execution / 实现工具执行
 
-### 实现工具执行
 
 Now let's define our tool classes. Each tool subclasses `MCP::Tool` and implements the tool logic:
 
@@ -1897,9 +1838,8 @@ class GetForecast < MCP::Tool
 end
 ```
 
-### Running the server
+### Running the server / 运行服务器
 
-### 运行服务器
 
 Finally, initialize and run the server:
 
@@ -1920,9 +1860,8 @@ Your server is complete! Run `bundle exec ruby weather.rb` to start the MCP serv
 
 你的服务器已经完成！运行 `bundle exec ruby weather.rb` 即可启动 MCP 服务器，它将监听来自 MCP 宿主的消息。现在让我们在现有的 MCP 宿主——Claude for Desktop 中测试你的服务器。
 
-## Testing your server with Claude for Desktop
+## Testing your server with Claude for Desktop / 使用 Claude for Desktop 测试服务器
 
-## 使用 Claude for Desktop 测试服务器
 
 First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it's updated to the latest version.**We'll need to configure Claude for Desktop for whichever MCP servers you want to use. To do this, open your Claude for Desktop App configuration at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor. Make sure to create the file if it doesn't exist.For example, if you have [VS Code](https://code.visualstudio.com/) installed:
 
@@ -1951,9 +1890,8 @@ Let's get started with building our weather server! [You can find the complete c
 
 让我们开始构建天气服务器吧！[你可以在这里找到我们将要构建的完整代码。](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-rust)
 
-### Prerequisite knowledge
+### Prerequisite knowledge / 前置知识
 
-### 前置知识
 
 This quickstart assumes you have familiarity with:
 
@@ -1967,9 +1905,8 @@ This quickstart assumes you have familiarity with:
 - Rust 中的 async/await
 - 像 Claude 这样的大语言模型
 
-### Logging in MCP Servers
+### Logging in MCP Servers / MCP 服务器中的日志记录
 
-### MCP 服务器中的日志记录
 
 When implementing MCP servers, be careful about how you handle logging:
 
@@ -1983,9 +1920,8 @@ When implementing MCP servers, be careful about how you handle logging:
 
 **对于基于 HTTP 的服务器：** 标准输出日志不会影响 HTTP 响应，因此没有问题。
 
-### Best Practices
+### Best Practices / 最佳实践
 
-### 最佳实践
 
 * Use a logging library that writes to stderr or files, such as `tracing` or `log` in Rust.
 * Configure your logging framework to avoid stdout output.
@@ -1993,9 +1929,8 @@ When implementing MCP servers, be careful about how you handle logging:
 - 使用写入 stderr 或文件的日志库，例如 Rust 中的 `tracing` 或 `log`。
 - 配置日志框架以避免输出到 stdout。
 
-### Quick Examples
+### Quick Examples / 快速示例
 
-### 快速示例
 
 ```rust
 // Bad (STDIO)
@@ -2005,9 +1940,8 @@ println!("Processing request");
 eprintln!("Processing request"); // writes to stderr
 ```
 
-### System requirements
+### System requirements / 系统要求
 
-### 系统要求
 
 * Rust 1.70 or higher installed.
 * Cargo (comes with Rust installation).
@@ -2015,9 +1949,8 @@ eprintln!("Processing request"); // writes to stderr
 - 已安装 Rust 1.70 或更高版本。
 - 已安装 Cargo（随 Rust 一起安装）。
 
-### Set up your environment
+### Set up your environment / 设置环境
 
-### 设置环境
 
 First, let's install Rust if you haven't already. You can install Rust from [rust-lang.org](https://www.rust-lang.org/tools/install):
 
@@ -2063,13 +1996,11 @@ Now let's dive into building your server.
 
 现在让我们开始构建你的服务器。
 
-## Building your server
+## Building your server / 构建服务器
 
-## 构建服务器
 
-### Importing packages and constants
+### Importing packages and constants / 导入包和常量
 
-### 导入包和常量
 
 Open `src/main.rs` and add these imports and constants at the top:
 
@@ -2094,9 +2025,8 @@ The `rmcp` crate provides the Model Context Protocol SDK for Rust, with features
 
 `rmcp` crate 提供了 Rust 的 Model Context Protocol SDK，包含服务器实现、过程宏和 stdio 传输功能。
 
-### Data structures
+### Data structures / 数据结构
 
-### 数据结构
 
 Next, let's define the data structures for deserializing responses from the National Weather Service API:
 
@@ -2175,9 +2105,8 @@ pub struct MCPAlertRequest {
 }
 ```
 
-### Helper functions
+### Helper functions / 辅助函数
 
-### 辅助函数
 
 Add helper functions for making API requests and formatting responses:
 
@@ -2227,9 +2156,8 @@ fn format_period(period: &ForecastPeriod) -> String {
 }
 ```
 
-### Implementing the Weather server and tools
+### Implementing the Weather server and tools / 实现 Weather 服务器和工具
 
-### 实现 Weather 服务器和工具
 
 Now let's implement the main Weather server struct with the tool handlers:
 
@@ -2310,9 +2238,8 @@ The `#[tool_router]` macro automatically generates the routing logic, and the `#
 
 `#[tool_router]` 宏自动生成路由逻辑，`#[tool]` 属性将方法标记为 MCP 工具。
 
-### Implementing the ServerHandler
+### Implementing the ServerHandler / 实现 ServerHandler
 
-### 实现 ServerHandler
 
 Implement the `ServerHandler` trait to define server capabilities:
 
@@ -2330,9 +2257,8 @@ impl ServerHandler for Weather {
 }
 ```
 
-### Running the server
+### Running the server / 运行服务器
 
-### 运行服务器
 
 Finally, implement the main function to run the server with stdio transport:
 
@@ -2360,9 +2286,8 @@ The compiled binary will be in `target/release/weather`.
 
 编译后的二进制文件将位于 `target/release/weather`。
 
-## Testing your server with Claude for Desktop
+## Testing your server with Claude for Desktop / 使用 Claude for Desktop 测试服务器
 
-## 使用 Claude for Desktop 测试服务器
 
 First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it's updated to the latest version.**We'll need to configure Claude for Desktop for whichever MCP servers you want to use. To do this, open your Claude for Desktop App configuration at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor. Make sure to create the file if it doesn't exist.For example, if you have [VS Code](https://code.visualstudio.com/) installed:
 
@@ -2391,9 +2316,8 @@ Let's get started with building our weather server! [You can find the complete c
 
 让我们开始构建天气服务器吧！[你可以在这里找到我们将要构建的完整代码。](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-go)
 
-### Prerequisite knowledge
+### Prerequisite knowledge / 前置知识
 
-### 前置知识
 
 This quickstart assumes you have familiarity with:
 
@@ -2405,9 +2329,8 @@ This quickstart assumes you have familiarity with:
 - Go
 - 像 Claude 这样的大语言模型
 
-### Logging in MCP Servers
+### Logging in MCP Servers / MCP 服务器中的日志记录
 
-### MCP 服务器中的日志记录
 
 When implementing MCP servers, be careful about how you handle logging:
 
@@ -2421,9 +2344,8 @@ When implementing MCP servers, be careful about how you handle logging:
 
 **对于基于 HTTP 的服务器：** 标准输出日志不会影响 HTTP 响应，因此没有问题。
 
-### Best Practices
+### Best Practices / 最佳实践
 
-### 最佳实践
 
 * Use `log.Println()` (which defaults to stderr) or a logging library that writes to stderr or files.
 * Use `fmt.Fprintf(os.Stderr, ...)` to write to stderr explicitly.
@@ -2431,9 +2353,8 @@ When implementing MCP servers, be careful about how you handle logging:
 - 使用 `log.Println()`（默认写入 stderr），或使用写入 stderr 或文件的日志库。
 - 使用 `fmt.Fprintf(os.Stderr, ...)` 显式写入 stderr。
 
-### Quick Examples
+### Quick Examples / 快速示例
 
-### 快速示例
 
 ```go
 // Bad (STDIO)
@@ -2446,17 +2367,15 @@ log.Println("Processing request") // defaults to stderr
 fmt.Fprintln(os.Stderr, "Processing request")
 ```
 
-### System requirements
+### System requirements / 系统要求
 
-### 系统要求
 
 * Go 1.24 or higher installed.
 
 - 已安装 Go 1.24 或更高版本。
 
-### Set up your environment
+### Set up your environment / 设置环境
 
-### 设置环境
 
 First, let's install Go if you haven't already. You can download and install Go from [go.dev](https://go.dev/dl/).Verify your Go installation:
 
@@ -2474,13 +2393,11 @@ Now let's dive into building your server.
 
 现在让我们开始构建你的服务器。
 
-## Building your server
+## Building your server / 构建服务器
 
-## 构建服务器
 
-### Importing packages and constants
+### Importing packages and constants / 导入包和常量
 
-### 导入包和常量
 
 Add these to the top of your `main.go`:
 
@@ -2508,9 +2425,8 @@ const (
 )
 ```
 
-### Data structures
+### Data structures / 数据结构
 
-### 数据结构
 
 Next, let's define the data structures used by our tools:
 
@@ -2564,9 +2480,8 @@ type AlertsInput struct {
 }
 ```
 
-### Helper functions
+### Helper functions / 辅助函数
 
-### 辅助函数
 
 Next, let's add our helper functions for querying and formatting the data from the National Weather Service API:
 
@@ -2630,9 +2545,8 @@ Forecast: %s
 }
 ```
 
-### Implementing tool execution
+### Implementing tool execution / 实现工具执行
 
-### 实现工具执行
 
 The tool execution handler is responsible for actually executing the logic of each tool. Let's add it:
 
@@ -2738,9 +2652,8 @@ func getAlerts(ctx context.Context, req *mcp.CallToolRequest, input AlertsInput)
 }
 ```
 
-### Running the server
+### Running the server / 运行服务器
 
-### 运行服务器
 
 Finally, implement the main function to run the server:
 
@@ -2784,9 +2697,8 @@ The compiled binary will be in `./weather`.
 
 编译后的二进制文件将位于 `./weather`。
 
-## Testing your server with Claude for Desktop
+## Testing your server with Claude for Desktop / 使用 Claude for Desktop 测试服务器
 
-## 使用 Claude for Desktop 测试服务器
 
 First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it's updated to the latest version.**
 We'll need to configure Claude for Desktop for whichever MCP servers you want to use. To do this, open your Claude for Desktop App configuration at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor. Make sure to create the file if it doesn't exist.

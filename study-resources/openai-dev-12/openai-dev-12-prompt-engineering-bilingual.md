@@ -361,9 +361,8 @@ var first_name = "Anna";
 </assistant_response>
 ```
 
-#### Save on cost and latency with prompt caching
+#### Save on cost and latency with prompt caching / 通过 prompt caching 节省成本和延迟
 
-#### 通过 prompt caching 节省成本和延迟
 
 When constructing a message, you should try and keep content that you expect to use over and over in your API requests at the beginning of your prompt, **and** among the first API parameters you pass in the JSON request body to [Chat Completions](/api/docs/api-reference/chat) or [Responses](/api/docs/api-reference/responses). This enables you to maximize cost and latency savings from [prompt caching](/api/docs/guides/prompt-caching).
 
@@ -454,9 +453,8 @@ Negative
 </assistant_response>
 ```
 
-## Include relevant context information
+## Include relevant context information / 包含相关上下文信息
 
-## 包含相关上下文信息
 
 It is often useful to include additional context information the model can use to generate a response within the prompt you give the model. There are a few common reasons why you might do this:
 
@@ -471,9 +469,8 @@ The technique of adding additional relevant context to the model generation requ
 
 向模型生成请求添加额外相关上下文的技术有时称为 **retrieval-augmented generation (RAG)**。你可以通过多种不同方式向提示添加上下文，例如查询向量数据库并将返回的文本包含在提示中，或者使用 OpenAI 内置的 [file search tool](/api/docs/guides/tools-file-search) 基于上传的文档生成内容。
 
-#### Planning for the context window
+#### Planning for the context window / 规划上下文窗口
 
-#### 规划上下文窗口
 
 Models can only handle so much data within the context they consider during a generation request. This memory limit is called a **context window**, which is defined in terms of [tokens](https://blogs.nvidia.com/blog/ai-tokens-explained)（chunks of data you pass in, from text to images）.
 
@@ -497,9 +494,8 @@ experience.](https://cookbook.openai.com/examples/gpt-5/gpt-5_prompting_guide)
 
 通过本 prompting guide 中的技巧和窍门，充分利用 GPT-5 的提示效果，这些内容来源于真实用例和实践经验。](https://cookbook.openai.com/examples/gpt-5/gpt-5_prompting_guide)
 
-### GPT-5 prompting best practices
+### GPT-5 prompting best practices / GPT-5 提示最佳实践
 
-### GPT-5 提示最佳实践
 
 While the [cookbook](/cookbook/examples/gpt-5/gpt-5_prompting_guide) has the best and most comprehensive guidance for prompting this model, here are a few best practices to keep in mind.
 
@@ -509,9 +505,8 @@ Coding
 
 编码
 
-#### Coding
+#### Coding / 编码
 
-#### 编码
 
 Prompting GPT-5 for coding tasks is most effective when following a few best practices: define the agent’s role, enforce structured tool use with examples, require thorough testing for correctness, and set Markdown standards for clean output.
 

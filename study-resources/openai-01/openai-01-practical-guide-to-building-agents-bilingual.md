@@ -1,13 +1,11 @@
-# A Practical Guide to Building Agents
-# 构建智能体实用指南
+# A Practical Guide to Building Agents / 构建智能体实用指南
 
 > **Source / 原文来源**: [OpenAI PDF](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)  
 > **Compiled for study on / 整理日期**: 2026-04-07
 
 ---
 
-## Introduction
-## 引言
+## Introduction / 引言
 
 Large language models are becoming increasingly capable of handling complex, multi-step tasks. Advances in reasoning, multimodality, and tool use have unlocked a new category of LLM-powered systems known as agents.
 
@@ -23,8 +21,7 @@ After reading this guide, you’ll have the foundational knowledge you need to c
 
 ---
 
-## What is an Agent?
-## 什么是智能体？
+## What is an Agent? / 什么是智能体？
 
 While conventional software enables users to streamline and automate workflows, agents are able to perform the same workflows on the users’ behalf with a high degree of independence.
 
@@ -56,8 +53,7 @@ More concretely, an agent possesses core characteristics that allow it to act re
 
 ---
 
-## When Should You Build an Agent?
-## 何时应该构建智能体？
+## When Should You Build an Agent? / 何时应该构建智能体？
 
 Building agents requires rethinking how your systems make decisions and handle complexity. Unlike conventional automation, agents are uniquely suited to workflows where traditional deterministic and rule-based approaches fall short.
 
@@ -89,8 +85,7 @@ Before committing to building an agent, validate that your use case can meet the
 
 ---
 
-## Agent Design Foundations
-## 智能体设计基础
+## Agent Design Foundations / 智能体设计基础
 
 In its most fundamental form, an agent consists of three core components:
 
@@ -120,8 +115,7 @@ weather_agent = Agent(
 )
 ```
 
-### Selecting Your Models
-### 选择模型
+### Selecting Your Models / 选择模型
 
 Different models have different strengths and tradeoffs related to task complexity, latency, and cost. As we’ll see in the next section on Orchestration, you might want to consider using a variety of models for different tasks in the workflow.
 
@@ -155,8 +149,7 @@ You can find a comprehensive guide to selecting OpenAI models here.
 
 您可以[在此处](https://platform.openai.com/docs/guides/model-selection)找到选择 OpenAI 模型的综合指南。
 
-### Defining Tools
-### 定义工具
+### Defining Tools / 定义工具
 
 Tools extend your agent’s capabilities by using APIs from underlying applications or systems. For legacy systems without APIs, agents can rely on computer-use models to interact directly with those applications and systems through web and application UIs—just as a human would.
 
@@ -207,8 +200,7 @@ As the number of required tools increases, consider splitting tasks across multi
 
 随着所需工具数量的增加，请考虑将任务拆分到多个智能体中（参见“编排”部分）。
 
-### Configuring Instructions
-### 配置指令
+### Configuring Instructions / 配置指令
 
 High-quality instructions are essential for any LLM-powered app, but especially critical for agents. Clear instructions reduce ambiguity and improve agent decision-making, resulting in smoother workflow execution and fewer errors.
 
@@ -244,8 +236,7 @@ You can use advanced models, like o1 or o3-mini, to automatically generate instr
 
 ---
 
-## Orchestration
-## 编排
+## Orchestration / 编排
 
 With the foundational components in place, you can consider orchestration patterns to enable your agent to execute workflows effectively.
 
@@ -271,8 +262,7 @@ Let’s explore each pattern in detail.
 
 让我们详细探讨每种模式。
 
-### Single-Agent Systems
-### 单智能体系统
+### Single-Agent Systems / 单智能体系统
 
 A single agent can handle many tasks by incrementally adding tools, keeping complexity manageable and simplifying evaluation and maintenance. Each new tool expands its capabilities without prematurely forcing you to orchestrate multiple agents.
 
@@ -314,8 +304,7 @@ An effective strategy for managing complexity without switching to a multi-agent
 """ You are a call center agent. You are interacting with {{user_first_name}} who has been a member for {{user_tenure}}. The user's most common complains are about {{user_complaint_categories}}. Greet the user, thank them for being a loyal customer, and answer any questions the user may have! """
 ```
 
-#### When to Consider Creating Multiple Agents
-#### 何时考虑创建多个智能体
+#### When to Consider Creating Multiple Agents / 何时考虑创建多个智能体
 
 Our general recommendation is to maximize a single agent’s capabilities first. More agents can provide intuitive separation of concepts, but can introduce additional complexity and overhead, so often a single agent with tools is sufficient.
 
@@ -337,8 +326,7 @@ For many complex workflows, splitting up prompts and tools across multiple agent
 
   **工具过载：** 问题不仅在于工具的数量，还在于它们的相似性或重叠。一些实现成功地管理了 15 个以上定义明确、互不相同的工具，而另一些实现却在不到 10 个重叠工具的情况下就举步维艰。如果通过提供描述性的名称、清晰的参数和详细的描述来提高工具的清晰度仍无法改善性能，请使用多个智能体。
 
-### Multi-Agent Systems
-### 多智能体系统
+### Multi-Agent Systems / 多智能体系统
 
 While multi-agent systems can be designed in numerous ways for specific workflows and requirements, our experience with customers highlights two broadly applicable categories:
 
@@ -360,8 +348,7 @@ Regardless of the orchestration pattern, the same principles apply: keep compone
 
 无论采用何种编排模式，相同的原则都适用：保持组件的灵活性、可组合性，并由清晰、结构良好的提示驱动。
 
-### Manager Pattern
-### 管理器模式
+### Manager Pattern / 管理器模式
 
 The manager pattern empowers a central LLM—the "manager"—to orchestrate a network of specialized agents seamlessly through tool calls. Instead of losing context or control, the manager intelligently delegates tasks to the right agent at the right time, effortlessly synthesizing the results into a cohesive interaction. This ensures a smooth, unified user experience, with specialized capabilities always available on-demand.
 
@@ -410,7 +397,7 @@ async def main():
 ```
 
 #### Declarative vs Non-declarative Graphs
-#### 声明式图与非声明式图
+#### Declarative vs Non-declarative Graphs / 声明式图与非声明式图
 
 Some frameworks are declarative, requiring developers to explicitly define every branch, loop, and conditional in the workflow upfront through graphs consisting of nodes (agents) and edges (deterministic or dynamic handoffs). While beneficial for visual clarity, this approach can quickly become cumbersome and challenging as workflows grow more dynamic and complex, often necessitating the learning of specialized domain-specific languages.
 
@@ -420,8 +407,7 @@ In contrast, the Agents SDK adopts a more flexible, code-first approach. Develop
 
 相比之下，Agents SDK 采用更灵活、代码优先的方法。开发人员可以直接使用熟悉的编程结构来表达工作流逻辑，而无需预先定义整个图，从而实现更动态和适应性更强的智能体编排。
 
-### Decentralized Pattern
-### 去中心化模式
+### Decentralized Pattern / 去中心化模式
 
 In a decentralized pattern, agents can ‘handoff’ workflow execution to one another. Handoffs are a one way transfer that allow an agent to delegate to another agent. In the Agents SDK, a handoff is a type of tool, or function. If an agent calls a handoff function, we immediately start execution on that new agent that was handed off to while also transferring the latest conversation state.
 
@@ -490,8 +476,7 @@ This pattern is especially effective for scenarios like conversation triage, or 
 
 ---
 
-## Guardrails
-## 护栏
+## Guardrails / 护栏
 
 Well-designed guardrails help you manage data privacy risks (for example, preventing system prompt leaks) or reputational risks (for example, enforcing brand aligned model behavior). You can set up guardrails that address risks you’ve already identified for your use case and layer in additional ones as you uncover new vulnerabilities. Guardrails are a critical component of any LLM-based deployment, but should be coupled with robust authentication and authorization protocols, strict access controls, and standard software security measures.
 
@@ -505,8 +490,7 @@ In the diagram below, we combine LLM-based guardrails, rules-based guardrails su
 
 在下图中，我们结合基于大语言模型的护栏、基于规则的护栏（如正则表达式）和 OpenAI 审核 API 来审查用户输入。
 
-### Types of Guardrails
-### 护栏的类型
+### Types of Guardrails / 护栏的类型
 
 - **Relevance classifier:** Ensures agent responses stay within the intended scope by flagging off-topic queries.
 
@@ -544,8 +528,7 @@ In the diagram below, we combine LLM-based guardrails, rules-based guardrails su
 
   **输出验证：** 通过提示工程和内容检查确保回应与品牌价值一致，防止可能损害品牌完整性的输出。
 
-### Building Guardrails
-### 构建护栏
+### Building Guardrails / 构建护栏
 
 Set up guardrails that address the risks you’ve already identified for your use case and layer in additional ones as you uncover new vulnerabilities.
 
@@ -637,8 +620,7 @@ Guardrails can be implemented as functions or agents that enforce policies such 
 
 护栏可以作为执行策略的函数或智能体来实现，例如防止越狱、相关性验证、关键词过滤、黑名单执行或安全分类。例如，上面的智能体乐观地处理数学问题输入，直到 math_homework_tripwire 护栏识别到违规并引发异常。
 
-### Planning for Human Intervention
-### 人工干预规划
+### Planning for Human Intervention / 人工干预规划
 
 Human intervention is a critical safeguard enabling you to improve an agent’s real-world performance without compromising user experience. It’s especially important early in deployment, helping identify failures, uncover edge cases, and establish a robust evaluation cycle.
 
@@ -662,8 +644,7 @@ Two primary triggers typically warrant human intervention:
 
 ---
 
-## Conclusion
-## 结论
+## Conclusion / 结论
 
 Agents mark a new era in workflow automation, where systems can reason through ambiguity, take action across tools, and handle multi-step tasks with a high degree of autonomy. Unlike simpler LLM applications, agents execute workflows end-to-end, making them well-suited for use cases that involve complex decisions, unstructured data, or brittle rule-based systems.
 

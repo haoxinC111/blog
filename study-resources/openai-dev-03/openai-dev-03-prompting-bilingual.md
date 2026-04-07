@@ -21,7 +21,7 @@ Universal prompt IDs give you flexibility to test and build. Variables and promp
 
 通用的 prompt ID 为你提供了测试和构建的灵活性。变量和提示共享一个基础提示，因此当你创建新版本时，可以将其用于 [evals](/api/docs/guides/evals)，以确定某个提示表现更好还是更差。
 
-### Prompting tools and techniques
+### Prompting tools and techniques / 提示工具与技术：
 
 提示工具与技术：
 
